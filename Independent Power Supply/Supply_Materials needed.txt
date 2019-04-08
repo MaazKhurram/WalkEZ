@@ -1,4 +1,6 @@
 Materials needed;
 
 
---> 
+--> prototype board
+--> voltage regulator
+--> two capacitors probably

@@ -1,4 +1,5 @@
 Materials needed;
 
 
---> 
+--> filaments 
+--> .obj files or probably gcode
