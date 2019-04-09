@@ -4,3 +4,5 @@ Materials needed;
 --> prototype board
 --> voltage regulator
 --> two capacitors probably
+--> 9 V battery holder with cover
+-->
