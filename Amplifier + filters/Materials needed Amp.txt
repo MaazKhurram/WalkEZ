@@ -4,4 +4,3 @@ Materials needed;
 --> TLV41121 Op- amp 
 --> one resistor 
 --> one potentiometer
--->
