@@ -24,10 +24,12 @@ typedef struct sine_node{
 */
 #define PLAY_AUDIO()                        \
 {                                           \
+    if(audio_output){                        \
     DAC1REFL = current->item;               \
     DACLDbits.DAC1LD = 1;                   \
     current = current->next;                \
     TIMER2_WAIT();                          \
+    }                                       \
 }                             
 
 
@@ -44,8 +46,33 @@ void __interrupt () playSineWave(void);
 static short audio_output; 
 static char ArrayIndex = 0;
 static const Node Sine_Sample[201]={
-{(short)128,(Node*)&Sine_Sample[1]},{(short)144,(Node*)&Sine_Sample[2]},{(short)160,(Node*)&Sine_Sample[3]},{(short)176,(Node*)&Sine_Sample[4]},{(short)191,(Node*)&Sine_Sample[5]},{(short)205,(Node*)&Sine_Sample[6]},{(short)218,(Node*)&Sine_Sample[7]},{(short)229,(Node*)&Sine_Sample[8]},{(short)238,(Node*)&Sine_Sample[9]},{(short)245,(Node*)&Sine_Sample[10]},{(short)251,(Node*)&Sine_Sample[11]},{(short)254,(Node*)&Sine_Sample[12]},{(short)255,(Node*)&Sine_Sample[13]},{(short)254,(Node*)&Sine_Sample[14]},{(short)251,(Node*)&Sine_Sample[15]},{(short)245,(Node*)&Sine_Sample[16]},{(short)238,(Node*)&Sine_Sample[17]},{(short)229,(Node*)&Sine_Sample[18]},{(short)218,(Node*)&Sine_Sample[19]},{(short)205,(Node*)&Sine_Sample[20]},{(short)191,(Node*)&Sine_Sample[21]},{(short)176,(Node*)&Sine_Sample[22]},{(short)160,(Node*)&Sine_Sample[23]},{(short)144,(Node*)&Sine_Sample[24]},{(short)128,(Node*)&Sine_Sample[25]},{(short)111,(Node*)&Sine_Sample[26]},{(short)95,(Node*)&Sine_Sample[27]},{(short)79,(Node*)&Sine_Sample[28]},{(short)64,(Node*)&Sine_Sample[29]},{(short)50,(Node*)&Sine_Sample[30]},{(short)37,(Node*)&Sine_Sample[31]},{(short)26,(Node*)&Sine_Sample[32]},{(short)17,(Node*)&Sine_Sample[33]},{(short)10,(Node*)&Sine_Sample[34]},{(short)4,(Node*)&Sine_Sample[35]},{(short)1,(Node*)&Sine_Sample[36]},{(short)0,(Node*)&Sine_Sample[37]},{(short)1,(Node*)&Sine_Sample[38]},{(short)4,(Node*)&Sine_Sample[39]},{(short)10,(Node*)&Sine_Sample[40]},{(short)17,(Node*)&Sine_Sample[41]},{(short)26,(Node*)&Sine_Sample[42]},{(short)37,(Node*)&Sine_Sample[43]},{(short)50,(Node*)&Sine_Sample[44]},{(short)64,(Node*)&Sine_Sample[45]},{(short)79,(Node*)&Sine_Sample[46]},{(short)95,(Node*)&Sine_Sample[47]},{(short)111,(Node*)&Sine_Sample[48]},{(short)128,(Node*)&Sine_Sample[0]}        
+    {(short)128,(Node*)&Sine_Sample[1]},{(short)144,(Node*)&Sine_Sample[2]},
+    {(short)160,(Node*)&Sine_Sample[3]},{(short)176,(Node*)&Sine_Sample[4]},
+    {(short)191,(Node*)&Sine_Sample[5]},{(short)205,(Node*)&Sine_Sample[6]},
+    {(short)218,(Node*)&Sine_Sample[7]},{(short)229,(Node*)&Sine_Sample[8]},
+    {(short)238,(Node*)&Sine_Sample[9]},{(short)245,(Node*)&Sine_Sample[10]},
+    {(short)251,(Node*)&Sine_Sample[11]},{(short)254,(Node*)&Sine_Sample[12]},
+    {(short)255,(Node*)&Sine_Sample[13]},{(short)254,(Node*)&Sine_Sample[14]},
+    {(short)251,(Node*)&Sine_Sample[15]},{(short)245,(Node*)&Sine_Sample[16]},
+    {(short)238,(Node*)&Sine_Sample[17]},{(short)229,(Node*)&Sine_Sample[18]},
+    {(short)218,(Node*)&Sine_Sample[19]},{(short)205,(Node*)&Sine_Sample[20]},
+    {(short)191,(Node*)&Sine_Sample[21]},{(short)176,(Node*)&Sine_Sample[22]},
+    {(short)160,(Node*)&Sine_Sample[23]},{(short)144,(Node*)&Sine_Sample[24]},
+    {(short)128,(Node*)&Sine_Sample[25]},{(short)111,(Node*)&Sine_Sample[26]},
+    {(short)95,(Node*)&Sine_Sample[27]},{(short)79,(Node*)&Sine_Sample[28]},
+    {(short)64,(Node*)&Sine_Sample[29]},{(short)50,(Node*)&Sine_Sample[30]},
+    {(short)37,(Node*)&Sine_Sample[31]},{(short)26,(Node*)&Sine_Sample[32]},
+    {(short)17,(Node*)&Sine_Sample[33]},{(short)10,(Node*)&Sine_Sample[34]},
+    {(short)4,(Node*)&Sine_Sample[35]},{(short)1,(Node*)&Sine_Sample[36]},
+    {(short)0,(Node*)&Sine_Sample[37]},{(short)1,(Node*)&Sine_Sample[38]},
+    {(short)4,(Node*)&Sine_Sample[39]},{(short)10,(Node*)&Sine_Sample[40]},
+    {(short)17,(Node*)&Sine_Sample[41]},{(short)26,(Node*)&Sine_Sample[42]},
+    {(short)37,(Node*)&Sine_Sample[43]},{(short)50,(Node*)&Sine_Sample[44]},
+    {(short)64,(Node*)&Sine_Sample[45]},{(short)79,(Node*)&Sine_Sample[46]},
+    {(short)95,(Node*)&Sine_Sample[47]},{(short)111,(Node*)&Sine_Sample[48]},
+    {(short)128,(Node*)&Sine_Sample[0]}        
 };
+
 
 static Node* current = (Node*)&Sine_Sample[0];
 void main(void) {
@@ -140,17 +167,19 @@ void main(void) {
 
             duration = TMR1H;
             duration = (duration<<8)+TMR1L;
-
+            
             
             long unsigned int timer2p=(duration << 4)+(duration<<2);
-            timer2p =timer2p>>10;
-            if(timer2p<255)
+            timer2p = timer2p>>10;
+            if(timer2p<80)
             {
                 TIMER2_START((char)timer2p);
+                audio_output=1;
             }
             else
             {
                 PIR1bits.TMR2IF=1;
+                audio_output=0;
             }
 
             while(PIR1bits.TMR1IF==0)
