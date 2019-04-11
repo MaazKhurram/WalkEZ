@@ -45,7 +45,7 @@ static char ArrayIndex = 0;
 static Node* current;
 
 void main(void) {
-    
+    int test = 1;
     const short array200[] = 
         {512,528,544,560,576,592,607,623,639,654,670,685,700,715,
         729,744,758,772,786,799,812,825,838,850,862,873,884,895,
