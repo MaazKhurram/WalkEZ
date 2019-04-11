@@ -77,7 +77,7 @@ void main(void) {
 
     TRISA = 251;
     DAC1CON0 = 160;
-    DAC1REFH=0;
+    DAC1REFH = 0;
     long unsigned int duration=0;
     
     ConfigureTimer1();
