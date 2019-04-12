@@ -3,49 +3,32 @@
 #include "Config.h"
 #include "Timer.h"
 
-#define OutputPin PORTBbits.RB0 //trig RC2
-#define InputPin PORTBbits.RB1  //echo RC3
-#define MAX_SAMPLES 201
-
+#define OutputPin PORTBbits.RB0 //trig
+#define InputPin PORTBbits.RB1  //echo
+#define Button PORTBbits.RB2    //button   
 
 typedef struct sine_node{
     short item;
     struct sine_node* next; 
 } Node;
-/*
+
 #define PLAY_AUDIO()                        \
 {                                           \
-    if (ArrayIndex == 200)                  \
-        ArrayIndex = 0;                     \
-    audio_output = array200[ArrayIndex++];  \
-    write2DAC(audio_output);                \
-    TIMER2_WAIT();                          \
-}                                           
-*/
-#define PLAY_AUDIO()                        \
-{                                           \
-    if(audio_output){                        \
-    DAC1REFL = current->item;               \
-    DACLDbits.DAC1LD = 1;                   \
-    current = current->next;                \
-    TIMER2_WAIT();                          \
+    if(audio_output){                       \
+        DAC1REFL = current->item;           \
+        DACLDbits.DAC1LD = 1;               \
+        current = current->next;            \
+        TIMER2_WAIT();                      \
     }                                       \
 }                             
 
 
-short SineArray(void);
-//REQUIRES:
-//          WriteValue is between 0 - 1023
-//PROMISES:
-//          writes value of WriteValue to the DAC1REFH and DAC1REFL such that 
-//          WriteValue is written to the output of DAC1
-void write2DAC(short WriteValue);
 void __interrupt () playSineWave(void);
 
 
 static short audio_output; 
 static char ArrayIndex = 0;
-static const Node Sine_Sample[201]={
+static const Node Sine_Sample[]={
     {(short)128,(Node*)&Sine_Sample[1]},{(short)144,(Node*)&Sine_Sample[2]},
     {(short)160,(Node*)&Sine_Sample[3]},{(short)176,(Node*)&Sine_Sample[4]},
     {(short)191,(Node*)&Sine_Sample[5]},{(short)205,(Node*)&Sine_Sample[6]},
@@ -70,41 +53,27 @@ static const Node Sine_Sample[201]={
     {(short)37,(Node*)&Sine_Sample[43]},{(short)50,(Node*)&Sine_Sample[44]},
     {(short)64,(Node*)&Sine_Sample[45]},{(short)79,(Node*)&Sine_Sample[46]},
     {(short)95,(Node*)&Sine_Sample[47]},{(short)111,(Node*)&Sine_Sample[48]},
-    {(short)128,(Node*)&Sine_Sample[0]}        
+    {(short)128,(Node*)&Sine_Sample[0]}
 };
 
 
 static Node* current = (Node*)&Sine_Sample[0];
 void main(void) {
-    
-    const short array200[] = 
-        {512,528,544,560,576,592,607,623,639,654,670,685,700,715,
-        729,744,758,772,786,799,812,825,838,850,862,873,884,895,
-        906,916,925,935,943,952,960,967,974,981,987,993,998,1003,
-        1007,1011,1014,1017,1019,1021,1022,1023,1023,1023,1022,1021,
-        1019,1017,1014,1011,1007,1003,998,993,987,981,974,967,960,952,
-        943,935,925,916,906,895,884,873,862,850,838,825,812,799,786,772,
-        758,744,729,715,700,685,670,654,639,623,607,592,576,560,544,528,
-        512,495,479,463,447,431,416,400,384,369,353,338,323,308,294,279,
-        265,251,237,224,211,198,185,173,161,150,139,128,117,107,98,88,80,
-        71,63,56,49,42,36,30,25,20,16,12,9,6,4,2,1,0,0,0,1,2,4,6,9,12,16,20,
-        25,30,36,42,49,56,63,71,80,88,98,107,117,128,139,150,161,173,185,198,
-        211,224,237,251,265,279,294,308,323,338,353,369,384,400,416,431,447,
-        463,479,495,512};
-    
-    
+   
     // Set the system clock speed to 32MHz and wait for the ready flag.
     OSCCON = 0xF4;
     while(OSCSTATbits.HFIOFR == 0);
     //Initialize the Digital to Analog Converter
     TRISBbits.TRISB0=0;
     TRISBbits.TRISB1=1;
+    TRISBbits.TRISB2=1;
     ANSELBbits.ANSB0=0;
     ANSELBbits.ANSB1=0;
-
+    ANSELBbits.ANSB2=0;
+    
     TRISA = 251;
     DAC1CON0 = 160;
-    DAC1REFH = 0;
+    DAC1REFH = 1;
     long unsigned int duration=0;
     
     ConfigureTimer1();
@@ -139,6 +108,81 @@ void main(void) {
     }
     */
     audio_output=0;
+    volatile char hold=0;
+    volatile char button_counter=0;
+    while(1)
+    {
+        
+        TIMER1_START();
+        if(button_counter>0)
+        {
+            
+            button_counter=0;
+            //acquire new distance/audio
+            OutputPin = 0;
+            TIMER4_START(20);
+            TIMER4_WAIT();
+
+            OutputPin = 1;
+            TIMER4_START(20);
+            TIMER4_WAIT();
+
+            OutputPin = 0;
+            __nop();
+            while(InputPin == 0);
+            TIMER1_START();
+            while((PIR1bits.TMR1IF==0) && (InputPin == 1) );
+
+            duration = TMR1H;
+            duration = (duration<<8)+TMR1L;
+            
+            
+            long unsigned int timer2p=(duration << 4)+(duration<<2);
+            timer2p = timer2p>>10;
+            if(timer2p<80)
+            {
+                TIMER2_START((char)timer2p);
+                audio_output=1;
+            }
+            else
+            {
+                PIR1bits.TMR2IF=1;
+                audio_output=0;
+            }
+            
+            //play for some time.
+            int play_count=10;
+            while(play_count>0)
+            {
+                TIMER1_START();
+                while(PIR1bits.TMR1IF==0)
+                {
+                    PLAY_AUDIO();
+                }
+                play_count--;
+            }
+        }
+        else
+        {
+            if(Button==1 && hold==0)
+            {
+                hold=1;
+                button_counter=1;
+            }
+            else if(Button==1 && hold==1)
+            {
+                continue;
+            }
+            else
+            {
+                hold=0;
+                button_counter=0;
+            }
+        }
+        
+        TIMER1_WAIT();
+    }
+    
     //INTCONbits.GIE=1;
     //INTCONbits.PEIE=1;
     //PIE1bits.TMR2IE=1;
@@ -190,21 +234,13 @@ void main(void) {
     }
       
 }
-
-
-void write2DAC(short WriteValue)
-{
-    DAC1REFH = WriteValue>>8;
-    short temp = WriteValue<<8;
-    DAC1REFL = temp>>8;
-    DACLDbits.DAC1LD = 1;
-}
  
-
 void __interrupt () playSineWave(void)
 {
-    DAC1REFL = current->item;
-    DACLDbits.DAC1LD = 1;
-    current = current->next;
-    TIMER2_WAIT();
+    if(audio_output){
+        DAC1REFL = current->item;
+        DACLDbits.DAC1LD = 1;
+        current = current->next;
+        TIMER2_WAIT();
+    }
 }
