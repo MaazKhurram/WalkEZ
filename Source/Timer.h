@@ -66,7 +66,7 @@ void ConfigureTimer4();
 
 #define TIMER4_WAIT()           \
 {                               \
-    while(!PIR4bits.TMR4IF);    \
+    while(!PIR4bits.TMR4IF){PLAY_AUDIO();}    \
     PIR4bits.TMR4IF = 0;        \
 }
 

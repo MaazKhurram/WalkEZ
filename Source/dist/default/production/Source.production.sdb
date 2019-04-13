@@ -7,17 +7,17 @@
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"47 C:\Users\Kevin\Desktop\WalkEZ.X\Sensor_Main.c
+"62 C:\Users\Kevin\Desktop\WalkEZ\Source\Sensor_Main.c
 [v _main main `(v  1 e 1 0 ]
-"167
+"244
 [v _playSineWave playSineWave `II(v  1 e 1 0 ]
-"4 C:\Users\Kevin\Desktop\WalkEZ.X\Timer.c
+"4 C:\Users\Kevin\Desktop\WalkEZ\Source\Timer.c
 [v _ConfigureTimer1 ConfigureTimer1 `(v  1 e 1 0 ]
 "18
 [v _ConfigureTimer2 ConfigureTimer2 `(v  1 e 1 0 ]
 "35
 [v _ConfigureTimer4 ConfigureTimer4 `(v  1 e 1 0 ]
-[s S137 . 1 `uc 1 RB0 1 0 :1:0 
+[s S281 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -27,8 +27,8 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "508 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h
-[u S146 . 1 `S137 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES146  1 e 1 @13 ]
+[u S290 . 1 `S281 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES290  1 e 1 @13 ]
 [s S27 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -44,7 +44,7 @@
 ]
 [u S39 . 1 `S27 1 . 1 0 `S36 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES39  1 e 1 @17 ]
-[s S159 . 1 `uc 1 TMR4IF 1 0 :1:0 
+[s S303 . 1 `uc 1 TMR4IF 1 0 :1:0 
 `uc 1 TMR6IF 1 0 :1:1 
 `uc 1 TMR3IF 1 0 :1:2 
 `uc 1 TMR3GIF 1 0 :1:3 
@@ -53,15 +53,15 @@
 `uc 1 TMR8IF 1 0 :1:6 
 ]
 "835
-[u S167 . 1 `S159 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES167  1 e 1 @20 ]
+[u S311 . 1 `S303 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES311  1 e 1 @20 ]
 "974
 [v _TMR1L TMR1L `VEuc  1 e 1 @24 ]
 "994
 [v _TMR1H TMR1H `VEuc  1 e 1 @25 ]
 "1014
 [v _T1CON T1CON `VEuc  1 e 1 @26 ]
-[s S270 . 1 `uc 1 ON 1 0 :1:0 
+[s S213 . 1 `uc 1 ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nSYNC 1 0 :1:2 
 `uc 1 OSCEN 1 0 :1:3 
@@ -69,7 +69,7 @@
 `uc 1 CS 1 0 :2:6 
 ]
 "1056
-[s S277 . 1 `uc 1 TMRON 1 0 :1:0 
+[s S220 . 1 `uc 1 TMRON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 SYNC 1 0 :1:2 
 `uc 1 SOSCEN 1 0 :1:3 
@@ -78,7 +78,7 @@
 `uc 1 CS0 1 0 :1:6 
 `uc 1 CS1 1 0 :1:7 
 ]
-[s S286 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S229 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -86,15 +86,15 @@
 `uc 1 T1CS0 1 0 :1:6 
 `uc 1 T1CS1 1 0 :1:7 
 ]
-[s S294 . 1 `uc 1 T1ON 1 0 :1:0 
+[s S237 . 1 `uc 1 T1ON 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 `uc 1 TMR1CS0 1 0 :1:6 
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
-[u S301 . 1 `S270 1 . 1 0 `S277 1 . 1 0 `S286 1 . 1 0 `S294 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES301  1 e 1 @26 ]
+[u S244 . 1 `S213 1 . 1 0 `S220 1 . 1 0 `S229 1 . 1 0 `S237 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES244  1 e 1 @26 ]
 "1171
 [v _T1GCON T1GCON `VEuc  1 e 1 @27 ]
 "1635
@@ -139,12 +139,12 @@
 [v _T4PR T4PR `VEuc  1 e 1 @1044 ]
 "10314
 [v _T4CON T4CON `VEuc  1 e 1 @1045 ]
-[s S178 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S155 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "10350
-[s S182 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S159 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -152,11 +152,11 @@
 `uc 1 CKPS1 1 0 :1:5 
 `uc 1 CKPS2 1 0 :1:6 
 ]
-[s S190 . 1 `uc 1 T4OUTPS 1 0 :4:0 
+[s S334 . 1 `uc 1 T4OUTPS 1 0 :4:0 
 `uc 1 T4CKPS 1 0 :3:4 
 `uc 1 T4ON 1 0 :1:7 
 ]
-[s S194 . 1 `uc 1 T4OUTPS0 1 0 :1:0 
+[s S338 . 1 `uc 1 T4OUTPS0 1 0 :1:0 
 `uc 1 T4OUTPS1 1 0 :1:1 
 `uc 1 T4OUTPS2 1 0 :1:2 
 `uc 1 T4OUTPS3 1 0 :1:3 
@@ -165,8 +165,8 @@
 `uc 1 T4CKPS2 1 0 :1:6 
 `uc 1 TMR4ON 1 0 :1:7 
 ]
-[u S203 . 1 `S178 1 . 1 0 `S182 1 . 1 0 `S190 1 . 1 0 `S194 1 . 1 0 ]
-[v _T4CONbits T4CONbits `VES203  1 e 1 @1045 ]
+[u S347 . 1 `S155 1 . 1 0 `S159 1 . 1 0 `S334 1 . 1 0 `S338 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES347  1 e 1 @1045 ]
 "10460
 [v _T4HLT T4HLT `VEuc  1 e 1 @1046 ]
 "10588
@@ -176,11 +176,11 @@
 "11560
 [v _T2CON T2CON `VEuc  1 e 1 @1173 ]
 "11596
-[s S351 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S167 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S355 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S171 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -189,42 +189,49 @@
 `uc 1 T2CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S364 . 1 `S178 1 . 1 0 `S182 1 . 1 0 `S351 1 . 1 0 `S355 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES364  1 e 1 @1173 ]
+[u S180 . 1 `S155 1 . 1 0 `S159 1 . 1 0 `S167 1 . 1 0 `S171 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES180  1 e 1 @1173 ]
 "11834
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @1175 ]
-[s S239 . 1 `uc 1 DAC1LD 1 0 :1:0 
+[s S379 . 1 `uc 1 DAC1LD 1 0 :1:0 
 `uc 1 DAC2LD 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 DAC5LD 1 0 :1:4 
 ]
 "13101
-[u S244 . 1 `S239 1 . 1 0 ]
-[v _DACLDbits DACLDbits `VES244  1 e 1 @1421 ]
+[u S384 . 1 `S379 1 . 1 0 ]
+[v _DACLDbits DACLDbits `VES384  1 e 1 @1421 ]
 "13121
 [v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @1422 ]
 "13346
 [v _DAC1REFL DAC1REFL `VEuc  1 e 1 @1423 ]
 "13768
 [v _DAC1REFH DAC1REFH `VEuc  1 e 1 @1424 ]
-"43 C:\Users\Kevin\Desktop\WalkEZ.X\Sensor_Main.c
+"30 C:\Users\Kevin\Desktop\WalkEZ\Source\Sensor_Main.c
 [v _audio_output audio_output `s  1 s 2 audio_output ]
-"45
+"32
 [s S69 sine_node 4 `s 1 item 2 0 `*.25S69 1 next 2 2 ]
+[v _Sine_Sample Sine_Sample `DC[49]S69  1 s 196 Sine_Sample ]
+"61
 [v _current current `*.25S69  1 s 2 current ]
-"47
+"62
 [v _main main `(v  1 e 1 0 ]
 {
-"137
-[v main@timer2p timer2p `ul  1 a 4 8 ]
-"82
-[v main@duration duration `ul  1 a 4 12 ]
-"64
-[s S69 sine_node 4 `s 1 item 2 0 `*.25S69 1 next 2 2 ]
-[v main@Sine_Sample Sine_Sample `DC[201]S69  1 s 804 Sine_Sample ]
-"155
+"195
+[v main@timer2p_469 timer2p `ul  1 a 4 14 ]
+"209
+[v main@play_count play_count `i  1 a 2 8 ]
+"147
+[v main@timer2p timer2p `ul  1 a 4 10 ]
+"80
+[v main@duration duration `ul  1 a 4 18 ]
+"114
+[v main@hold hold `VEuc  1 a 1 23 ]
+"115
+[v main@button_counter button_counter `VEuc  1 a 1 22 ]
+"242
 } 0
-"35 C:\Users\Kevin\Desktop\WalkEZ.X\Timer.c
+"35 C:\Users\Kevin\Desktop\WalkEZ\Source\Timer.c
 [v _ConfigureTimer4 ConfigureTimer4 `(v  1 e 1 0 ]
 {
 "50
@@ -239,8 +246,8 @@
 {
 "16
 } 0
-"167 C:\Users\Kevin\Desktop\WalkEZ.X\Sensor_Main.c
+"244 C:\Users\Kevin\Desktop\WalkEZ\Source\Sensor_Main.c
 [v _playSineWave playSineWave `II(v  1 e 1 0 ]
 {
-"173
+"252
 } 0

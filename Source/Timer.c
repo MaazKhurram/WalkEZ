@@ -21,13 +21,13 @@ void ConfigureTimer2()
     // T2CLKCON: TIMER2 CLOCK SELECTION REGISTER (Page 306))
     // Bits 8:4 = 0b00000   These bits are not implemented
     // Bits 3:0 = 0b0010    Clock source is system clock
-    T2CLKCON = 0x02;
+    T2CLKCON = 0x03;
 
-    // T2CON: TIMERx CONTROL REGISTER (Page 307)
+    // T2CON: TIMERx CONTRL REGISTER (Page 307)
     // Bit  7   = 0b1       Timer is on.
     // Bits 6:4 = 0b000     Pres-caler is 1:1
     // Bits 3:0 = 0b0000    Posts-caler is 1:1
-    T2CON = 0xD0;
+    T2CON = 0xB0;
     PIR1bits.TMR2IF = 0; 
     return;
 }
