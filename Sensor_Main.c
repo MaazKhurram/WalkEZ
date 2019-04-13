@@ -5,7 +5,8 @@
 
 #define OutputPin PORTBbits.RB0 //trig
 #define InputPin PORTBbits.RB1  //echo
-#define Button PORTBbits.RB2    //button   
+#define Button PORTBbits.RB2    //pulse button  
+#define Search PORTBbits.RB3    //search mode button
 
 typedef struct sine_node{
     short item;
@@ -67,9 +68,11 @@ void main(void) {
     TRISBbits.TRISB0=0;
     TRISBbits.TRISB1=1;
     TRISBbits.TRISB2=1;
+    TRISBbits.TRISB3=1;
     ANSELBbits.ANSB0=0;
     ANSELBbits.ANSB1=0;
     ANSELBbits.ANSB2=0;
+    ANSELBbits.ANSB3=0;
     
     TRISA = 251;
     DAC1CON0 = 160;
@@ -112,85 +115,10 @@ void main(void) {
     volatile char button_counter=0;
     while(1)
     {
-        
         TIMER1_START();
-        if(button_counter>0)
+        if(Search==1)
         {
-            
-            button_counter=0;
-            //acquire new distance/audio
-            OutputPin = 0;
-            TIMER4_START(20);
-            TIMER4_WAIT();
-
-            OutputPin = 1;
-            TIMER4_START(20);
-            TIMER4_WAIT();
-
-            OutputPin = 0;
-            __nop();
-            while(InputPin == 0){};
-            TIMER1_START();
-            
-            while(InputPin == 1&&PIR1bits.TMR1IF==0){};
-            
-            if(PIR1bits.TMR1IF==1)
-                continue;
-            duration = TMR1H;
-            duration = (duration<<8)+TMR1L;
-            
-            
-            long unsigned int timer2p=(duration << 4)+(duration<<2);
-            timer2p = timer2p>>10;
-            if(timer2p<80)
-            {
-                TIMER2_START((char)timer2p);
-                audio_output=1;
-            }
-            else
-            {
-                PIR1bits.TMR2IF=1;
-                audio_output=0;
-            }
-            
-            //play for some time.
-            int play_count=10;
-            while(play_count>0)
-            {
-                TIMER1_START();
-                while(PIR1bits.TMR1IF==0)
-                {
-                    PLAY_AUDIO();
-                }
-                play_count--;
-            }
-        }
-        else
-        {
-            if(Button==1 && hold==0)
-            {
-                hold=1;
-                button_counter=1;
-            }
-            else if(Button==1 && hold==1)
-            {
-                continue;
-            }
-            else
-            {
-                hold=0;
-                button_counter=0;
-            }
-        }
-        
-        TIMER1_WAIT();
-    }
-    
-    //INTCONbits.GIE=1;
-    //INTCONbits.PEIE=1;
-    //PIE1bits.TMR2IE=1;
-    while(1)
-    {
+            //enter search mode
             OutputPin = 0;
             TIMER4_START(20);
             TIMER4_WAIT();
@@ -233,6 +161,81 @@ void main(void) {
             {
                 PLAY_AUDIO();
             }
+        
+        }
+        else
+        {
+            
+            //enter pulse mode
+            if(button_counter)
+            {
+                button_counter=0;
+                //acquire new distance/audio
+                OutputPin = 0;
+                TIMER4_START(20);
+                TIMER4_WAIT();
+
+                OutputPin = 1;
+                TIMER4_START(20);
+                TIMER4_WAIT();
+
+                OutputPin = 0;
+                __nop();
+                while(InputPin == 0){};
+                TIMER1_START();
+
+                while(InputPin == 1&&PIR1bits.TMR1IF==0){};
+
+                if(PIR1bits.TMR1IF==1)
+                    continue;
+                duration = TMR1H;
+                duration = (duration<<8)+TMR1L;
+
+
+                long unsigned int timer2p=(duration << 4)+(duration<<2);
+                timer2p = timer2p>>10;
+                if(timer2p<80)
+                {
+                    TIMER2_START((char)timer2p);
+                    audio_output=1;
+                }
+                else
+                {
+                    PIR1bits.TMR2IF=1;
+                    audio_output=0;
+                }
+
+                //play for some time.
+                int play_count=10;
+                while(play_count>0)
+                {
+                    TIMER1_START();
+                    while(PIR1bits.TMR1IF==0)
+                    {
+                        PLAY_AUDIO();
+                    }
+                    play_count--;
+                }
+            }
+            else
+            {
+                if(Button==1 && hold==0)
+                {
+                    hold=1;
+                    button_counter=1;
+                }
+                else if(Button==1 && hold==1)
+                {
+                    continue;
+                }
+                else
+                {
+                    hold=0;
+                    button_counter=0;
+                }
+            }
+        TIMER1_WAIT();
+        }
         
     }
       
