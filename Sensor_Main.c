@@ -129,10 +129,13 @@ void main(void) {
 
             OutputPin = 0;
             __nop();
-            while(InputPin == 0);
+            while(InputPin == 0){};
             TIMER1_START();
-            while((PIR1bits.TMR1IF==0) && (InputPin == 1) );
-
+            
+            while(InputPin == 1&&PIR1bits.TMR1IF==0){};
+            
+            if(PIR1bits.TMR1IF==1)
+                continue;
             duration = TMR1H;
             duration = (duration<<8)+TMR1L;
             
