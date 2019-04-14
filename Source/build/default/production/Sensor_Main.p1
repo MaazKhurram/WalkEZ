@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"10 Sensor_Main.c
-[; ;Sensor_Main.c: 10: typedef struct sine_node{
+"11 Sensor_Main.c
+[; ;Sensor_Main.c: 11: typedef struct sine_node{
 [s S1731 `s 1 `*S1731 1 ]
 [n S1731 sine_node item next ]
 [p mainexit ]
@@ -46,6 +46,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13121
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13121: extern volatile unsigned char DAC1CON0 __attribute__((address(0x58E)));
 [v _DAC1CON0 `Vuc ~T0 @X0 0 e@1422 ]
+"13768
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13768: extern volatile unsigned char DAC1REFH __attribute__((address(0x590)));
+[v _DAC1REFH `Vuc ~T0 @X0 0 e@1424 ]
 "19 ./Timer.h
 [; ;./Timer.h: 19: void ConfigureTimer1();
 [v _ConfigureTimer1 `(v ~T0 @X0 0 e? ]
@@ -55,7 +58,77 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30
 [; ;./Timer.h: 30: void ConfigureTimer4();
 [v _ConfigureTimer4 `(v ~T0 @X0 0 e? ]
-"497 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h
+"11506 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11506: extern volatile unsigned char T2PR __attribute__((address(0x494)));
+[v _T2PR `Vuc ~T0 @X0 0 e@1172 ]
+"642
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 642:     struct {
+[s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S42 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
+"652
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 652:     struct {
+[s S43 :2 `uc 1 :1 `uc 1 ]
+[n S43 . . CCPIF ]
+"641
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 641: typedef union {
+[u S41 `S42 1 `S43 1 ]
+[n S41 . . . ]
+"657
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 657: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x011)));
+[v _PIR1bits `VS41 ~T0 @X0 0 e@17 ]
+"11566
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11566:     struct {
+[s S571 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S571 . OUTPS CKPS ON ]
+"11571
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11571:     struct {
+[s S572 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S572 . OUTPS0 OUTPS1 OUTPS2 OUTPS3 CKPS0 CKPS1 CKPS2 ]
+"11580
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11580:     struct {
+[s S573 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S573 . T2OUTPS T2CKPS T2ON ]
+"11585
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11585:     struct {
+[s S574 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S574 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 T2CKPS0 T2CKPS1 T2CKPS2 TMR2ON ]
+"11565
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11565: typedef union {
+[u S570 `S571 1 `S572 1 `S573 1 `S574 1 ]
+[n S570 . . . . . ]
+"11596
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11596: extern volatile T2CONbits_t T2CONbits __attribute__((address(0x495)));
+[v _T2CONbits `VS570 ~T0 @X0 0 e@1173 ]
+"994
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 994: extern volatile unsigned char TMR1H __attribute__((address(0x019)));
+[v _TMR1H `Vuc ~T0 @X0 0 e@25 ]
+"974
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 974: extern volatile unsigned char TMR1L __attribute__((address(0x018)));
+[v _TMR1L `Vuc ~T0 @X0 0 e@24 ]
+"1020
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1020:     struct {
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S61 . ON . nSYNC OSCEN CKPS CS ]
+"1028
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1028:     struct {
+[s S62 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S62 . TMRON . SYNC SOSCEN CKPS0 CKPS1 CS0 CS1 ]
+"1038
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1038:     struct {
+[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S63 . TMR1ON . nT1SYNC T1OSCEN . T1CS0 T1CS1 ]
+"1047
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1047:     struct {
+[s S64 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S64 . T1ON . T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
+"1019
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1019: typedef union {
+[u S60 `S61 1 `S62 1 `S63 1 `S64 1 ]
+[n S60 . . . . . ]
+"1056
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1056: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x01A)));
+[v _T1CONbits `VS60 ~T0 @X0 0 e@26 ]
+"497
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 497:     struct {
 [s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -103,10 +176,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10350
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 10350: extern volatile T4CONbits_t T4CONbits __attribute__((address(0x415)));
 [v _T4CONbits `VS496 ~T0 @X0 0 e@1045 ]
-"31 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"13346 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h
+"13346
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13346: extern volatile unsigned char DAC1REFL __attribute__((address(0x58F)));
 [v _DAC1REFL `Vuc ~T0 @X0 0 e@1423 ]
 "13094
@@ -120,79 +190,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13101
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13101: extern volatile DACLDbits_t DACLDbits __attribute__((address(0x58D)));
 [v _DACLDbits `VS661 ~T0 @X0 0 e@1421 ]
-"642
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 642:     struct {
-[s S42 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S42 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
-"652
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 652:     struct {
-[s S43 :2 `uc 1 :1 `uc 1 ]
-[n S43 . . CCPIF ]
-"641
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 641: typedef union {
-[u S41 `S42 1 `S43 1 ]
-[n S41 . . . ]
-"657
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 657: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x011)));
-[v _PIR1bits `VS41 ~T0 @X0 0 e@17 ]
-"994
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 994: extern volatile unsigned char TMR1H __attribute__((address(0x019)));
-[v _TMR1H `Vuc ~T0 @X0 0 e@25 ]
-"974
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 974: extern volatile unsigned char TMR1L __attribute__((address(0x018)));
-[v _TMR1L `Vuc ~T0 @X0 0 e@24 ]
-"1020
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1020:     struct {
-[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S61 . ON . nSYNC OSCEN CKPS CS ]
-"1028
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1028:     struct {
-[s S62 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S62 . TMRON . SYNC SOSCEN CKPS0 CKPS1 CS0 CS1 ]
-"1038
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1038:     struct {
-[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S63 . TMR1ON . nT1SYNC T1OSCEN . T1CS0 T1CS1 ]
-"1047
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1047:     struct {
-[s S64 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S64 . T1ON . T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
-"1019
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1019: typedef union {
-[u S60 `S61 1 `S62 1 `S63 1 `S64 1 ]
-[n S60 . . . . . ]
-"1056
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 1056: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x01A)));
-[v _T1CONbits `VS60 ~T0 @X0 0 e@26 ]
-"11506
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11506: extern volatile unsigned char T2PR __attribute__((address(0x494)));
-[v _T2PR `Vuc ~T0 @X0 0 e@1172 ]
-"11566
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11566:     struct {
-[s S571 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S571 . OUTPS CKPS ON ]
-"11571
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11571:     struct {
-[s S572 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S572 . OUTPS0 OUTPS1 OUTPS2 OUTPS3 CKPS0 CKPS1 CKPS2 ]
-"11580
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11580:     struct {
-[s S573 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S573 . T2OUTPS T2CKPS T2ON ]
-"11585
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11585:     struct {
-[s S574 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S574 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 T2CKPS0 T2CKPS1 T2CKPS2 TMR2ON ]
-"11565
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11565: typedef union {
-[u S570 `S571 1 `S572 1 `S573 1 `S574 1 ]
-[n S570 . . . . . ]
-"11596
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11596: extern volatile T2CONbits_t T2CONbits __attribute__((address(0x495)));
-[v _T2CONbits `VS570 ~T0 @X0 0 e@1173 ]
-"13768
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13768: extern volatile unsigned char DAC1REFH __attribute__((address(0x590)));
-[v _DAC1REFH `Vuc ~T0 @X0 0 e@1424 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 [t ~ __interrupt . k ]
 [t T2 __interrupt ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h
@@ -1893,1343 +1893,938 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WDTE = OFF ]
 "7
 [p x PLLEN = ON ]
-"43 Sensor_Main.c
-[; ;Sensor_Main.c: 43: static short audio_output;
+"30 Sensor_Main.c
+[; ;Sensor_Main.c: 30: static short audio_output;
 [v _audio_output `s ~T0 @X0 1 s ]
-"44
-[; ;Sensor_Main.c: 44: static char ArrayIndex = 0;
+"31
+[; ;Sensor_Main.c: 31: static char ArrayIndex = 0;
 [v _ArrayIndex `uc ~T0 @X0 1 s ]
 [i _ArrayIndex
 -> -> 0 `i `uc
 ]
-"45
-[; ;Sensor_Main.c: 45: static Node* current;
+"32
+[; ;Sensor_Main.c: 32: static const Node Sine_Sample[]={
+[v _Sine_Sample `CS1731 ~T0 @X0 -> 49 `i s ]
+[i _Sine_Sample
+:U ..
+:U ..
+-> -> 128 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 1 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 144 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 2 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 160 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 3 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 176 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 4 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 191 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 5 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 205 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 6 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 218 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 7 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 229 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 8 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 238 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 9 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 245 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 10 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 251 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 11 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 254 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 12 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 255 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 13 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 254 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 14 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 251 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 15 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 245 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 16 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 238 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 17 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 229 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 18 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 218 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 19 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 205 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 20 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 191 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 21 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 176 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 22 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 160 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 23 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 144 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 24 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 128 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 25 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 111 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 26 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 95 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 27 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 79 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 28 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 64 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 29 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 50 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 30 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 37 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 31 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 26 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 32 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 17 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 33 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 10 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 34 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 4 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 35 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 1 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 36 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 0 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 37 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 1 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 38 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 4 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 39 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 10 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 40 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 17 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 41 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 26 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 42 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 37 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 43 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 50 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 44 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 64 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 45 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 79 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 46 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 95 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 47 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 111 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 48 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+:U ..
+-> -> 128 `i `s
+-> &U *U + &U _Sine_Sample * -> -> -> 0 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+..
+..
+]
+"61
+[; ;Sensor_Main.c: 61: static Node* current = (Node*)&Sine_Sample[0];
 [v _current `*S1731 ~T0 @X0 1 s ]
+[i _current
+-> &U *U + &U _Sine_Sample * -> -> -> 0 `i `ui `ux -> -> # *U &U _Sine_Sample `ui `ux `*S1731
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"47
-[; ;Sensor_Main.c: 47: void main(void) {
+"62
+[; ;Sensor_Main.c: 62: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"49
-[; ;Sensor_Main.c: 49:     const short array200[] =
-[v F12000 `Cs ~T0 @X0 -> 201 `i s array200 ]
-[i F12000
-:U ..
--> -> 512 `i `s
--> -> 528 `i `s
--> -> 544 `i `s
--> -> 560 `i `s
--> -> 576 `i `s
--> -> 592 `i `s
--> -> 607 `i `s
--> -> 623 `i `s
--> -> 639 `i `s
--> -> 654 `i `s
--> -> 670 `i `s
--> -> 685 `i `s
--> -> 700 `i `s
--> -> 715 `i `s
--> -> 729 `i `s
--> -> 744 `i `s
--> -> 758 `i `s
--> -> 772 `i `s
--> -> 786 `i `s
--> -> 799 `i `s
--> -> 812 `i `s
--> -> 825 `i `s
--> -> 838 `i `s
--> -> 850 `i `s
--> -> 862 `i `s
--> -> 873 `i `s
--> -> 884 `i `s
--> -> 895 `i `s
--> -> 906 `i `s
--> -> 916 `i `s
--> -> 925 `i `s
--> -> 935 `i `s
--> -> 943 `i `s
--> -> 952 `i `s
--> -> 960 `i `s
--> -> 967 `i `s
--> -> 974 `i `s
--> -> 981 `i `s
--> -> 987 `i `s
--> -> 993 `i `s
--> -> 998 `i `s
--> -> 1003 `i `s
--> -> 1007 `i `s
--> -> 1011 `i `s
--> -> 1014 `i `s
--> -> 1017 `i `s
--> -> 1019 `i `s
--> -> 1021 `i `s
--> -> 1022 `i `s
--> -> 1023 `i `s
--> -> 1023 `i `s
--> -> 1023 `i `s
--> -> 1022 `i `s
--> -> 1021 `i `s
--> -> 1019 `i `s
--> -> 1017 `i `s
--> -> 1014 `i `s
--> -> 1011 `i `s
--> -> 1007 `i `s
--> -> 1003 `i `s
--> -> 998 `i `s
--> -> 993 `i `s
--> -> 987 `i `s
--> -> 981 `i `s
--> -> 974 `i `s
--> -> 967 `i `s
--> -> 960 `i `s
--> -> 952 `i `s
--> -> 943 `i `s
--> -> 935 `i `s
--> -> 925 `i `s
--> -> 916 `i `s
--> -> 906 `i `s
--> -> 895 `i `s
--> -> 884 `i `s
--> -> 873 `i `s
--> -> 862 `i `s
--> -> 850 `i `s
--> -> 838 `i `s
--> -> 825 `i `s
--> -> 812 `i `s
--> -> 799 `i `s
--> -> 786 `i `s
--> -> 772 `i `s
--> -> 758 `i `s
--> -> 744 `i `s
--> -> 729 `i `s
--> -> 715 `i `s
--> -> 700 `i `s
--> -> 685 `i `s
--> -> 670 `i `s
--> -> 654 `i `s
--> -> 639 `i `s
--> -> 623 `i `s
--> -> 607 `i `s
--> -> 592 `i `s
--> -> 576 `i `s
--> -> 560 `i `s
--> -> 544 `i `s
--> -> 528 `i `s
--> -> 512 `i `s
--> -> 495 `i `s
--> -> 479 `i `s
--> -> 463 `i `s
--> -> 447 `i `s
--> -> 431 `i `s
--> -> 416 `i `s
--> -> 400 `i `s
--> -> 384 `i `s
--> -> 369 `i `s
--> -> 353 `i `s
--> -> 338 `i `s
--> -> 323 `i `s
--> -> 308 `i `s
--> -> 294 `i `s
--> -> 279 `i `s
--> -> 265 `i `s
--> -> 251 `i `s
--> -> 237 `i `s
--> -> 224 `i `s
--> -> 211 `i `s
--> -> 198 `i `s
--> -> 185 `i `s
--> -> 173 `i `s
--> -> 161 `i `s
--> -> 150 `i `s
--> -> 139 `i `s
--> -> 128 `i `s
--> -> 117 `i `s
--> -> 107 `i `s
--> -> 98 `i `s
--> -> 88 `i `s
--> -> 80 `i `s
--> -> 71 `i `s
--> -> 63 `i `s
--> -> 56 `i `s
--> -> 49 `i `s
--> -> 42 `i `s
--> -> 36 `i `s
--> -> 30 `i `s
--> -> 25 `i `s
--> -> 20 `i `s
--> -> 16 `i `s
--> -> 12 `i `s
--> -> 9 `i `s
--> -> 6 `i `s
--> -> 4 `i `s
--> -> 2 `i `s
--> -> 1 `i `s
--> -> 0 `i `s
--> -> 0 `i `s
--> -> 0 `i `s
--> -> 1 `i `s
--> -> 2 `i `s
--> -> 4 `i `s
--> -> 6 `i `s
--> -> 9 `i `s
--> -> 12 `i `s
--> -> 16 `i `s
--> -> 20 `i `s
--> -> 25 `i `s
--> -> 30 `i `s
--> -> 36 `i `s
--> -> 42 `i `s
--> -> 49 `i `s
--> -> 56 `i `s
--> -> 63 `i `s
--> -> 71 `i `s
--> -> 80 `i `s
--> -> 88 `i `s
--> -> 98 `i `s
--> -> 107 `i `s
--> -> 117 `i `s
--> -> 128 `i `s
--> -> 139 `i `s
--> -> 150 `i `s
--> -> 161 `i `s
--> -> 173 `i `s
--> -> 185 `i `s
--> -> 198 `i `s
--> -> 211 `i `s
--> -> 224 `i `s
--> -> 237 `i `s
--> -> 251 `i `s
--> -> 265 `i `s
--> -> 279 `i `s
--> -> 294 `i `s
--> -> 308 `i `s
--> -> 323 `i `s
--> -> 338 `i `s
--> -> 353 `i `s
--> -> 369 `i `s
--> -> 384 `i `s
--> -> 400 `i `s
--> -> 416 `i `s
--> -> 431 `i `s
--> -> 447 `i `s
--> -> 463 `i `s
--> -> 479 `i `s
--> -> 495 `i `s
--> -> 512 `i `s
-..
-]
-"64
-[; ;Sensor_Main.c: 64:     const Node Sine_Sample[201]={
-[v F12001 `CS1731 ~T0 @X0 -> 201 `i s Sine_Sample ]
-[i F12001
-:U ..
-:U ..
--> -> 512 `i `s
--> &U *U + &U F12001 * -> -> -> 1 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 528 `i `s
--> &U *U + &U F12001 * -> -> -> 2 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 544 `i `s
--> &U *U + &U F12001 * -> -> -> 3 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 560 `i `s
--> &U *U + &U F12001 * -> -> -> 4 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 576 `i `s
--> &U *U + &U F12001 * -> -> -> 5 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 592 `i `s
--> &U *U + &U F12001 * -> -> -> 6 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 607 `i `s
--> &U *U + &U F12001 * -> -> -> 7 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 623 `i `s
--> &U *U + &U F12001 * -> -> -> 8 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 639 `i `s
--> &U *U + &U F12001 * -> -> -> 9 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 654 `i `s
--> &U *U + &U F12001 * -> -> -> 10 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 670 `i `s
--> &U *U + &U F12001 * -> -> -> 11 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 685 `i `s
--> &U *U + &U F12001 * -> -> -> 12 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 700 `i `s
--> &U *U + &U F12001 * -> -> -> 13 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 715 `i `s
--> &U *U + &U F12001 * -> -> -> 14 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 729 `i `s
--> &U *U + &U F12001 * -> -> -> 15 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 744 `i `s
--> &U *U + &U F12001 * -> -> -> 16 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 758 `i `s
--> &U *U + &U F12001 * -> -> -> 17 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 772 `i `s
--> &U *U + &U F12001 * -> -> -> 18 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 786 `i `s
--> &U *U + &U F12001 * -> -> -> 19 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 799 `i `s
--> &U *U + &U F12001 * -> -> -> 20 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 812 `i `s
--> &U *U + &U F12001 * -> -> -> 21 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 825 `i `s
--> &U *U + &U F12001 * -> -> -> 22 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 838 `i `s
--> &U *U + &U F12001 * -> -> -> 23 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 850 `i `s
--> &U *U + &U F12001 * -> -> -> 24 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 862 `i `s
--> &U *U + &U F12001 * -> -> -> 25 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 873 `i `s
--> &U *U + &U F12001 * -> -> -> 26 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 884 `i `s
--> &U *U + &U F12001 * -> -> -> 27 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 895 `i `s
--> &U *U + &U F12001 * -> -> -> 28 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 906 `i `s
--> &U *U + &U F12001 * -> -> -> 29 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 916 `i `s
--> &U *U + &U F12001 * -> -> -> 30 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 925 `i `s
--> &U *U + &U F12001 * -> -> -> 31 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 935 `i `s
--> &U *U + &U F12001 * -> -> -> 32 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 943 `i `s
--> &U *U + &U F12001 * -> -> -> 33 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 952 `i `s
--> &U *U + &U F12001 * -> -> -> 34 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 960 `i `s
--> &U *U + &U F12001 * -> -> -> 35 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 967 `i `s
--> &U *U + &U F12001 * -> -> -> 36 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 974 `i `s
--> &U *U + &U F12001 * -> -> -> 37 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 981 `i `s
--> &U *U + &U F12001 * -> -> -> 38 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 987 `i `s
--> &U *U + &U F12001 * -> -> -> 39 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 993 `i `s
--> &U *U + &U F12001 * -> -> -> 40 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 998 `i `s
--> &U *U + &U F12001 * -> -> -> 41 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1003 `i `s
--> &U *U + &U F12001 * -> -> -> 42 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1007 `i `s
--> &U *U + &U F12001 * -> -> -> 43 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1011 `i `s
--> &U *U + &U F12001 * -> -> -> 44 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1014 `i `s
--> &U *U + &U F12001 * -> -> -> 45 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1017 `i `s
--> &U *U + &U F12001 * -> -> -> 46 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1019 `i `s
--> &U *U + &U F12001 * -> -> -> 47 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1021 `i `s
--> &U *U + &U F12001 * -> -> -> 48 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1022 `i `s
--> &U *U + &U F12001 * -> -> -> 49 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1023 `i `s
--> &U *U + &U F12001 * -> -> -> 50 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1023 `i `s
--> &U *U + &U F12001 * -> -> -> 51 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1023 `i `s
--> &U *U + &U F12001 * -> -> -> 52 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1022 `i `s
--> &U *U + &U F12001 * -> -> -> 53 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1021 `i `s
--> &U *U + &U F12001 * -> -> -> 54 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1019 `i `s
--> &U *U + &U F12001 * -> -> -> 55 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1017 `i `s
--> &U *U + &U F12001 * -> -> -> 56 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1014 `i `s
--> &U *U + &U F12001 * -> -> -> 57 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1011 `i `s
--> &U *U + &U F12001 * -> -> -> 58 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1007 `i `s
--> &U *U + &U F12001 * -> -> -> 59 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1003 `i `s
--> &U *U + &U F12001 * -> -> -> 60 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 998 `i `s
--> &U *U + &U F12001 * -> -> -> 61 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 993 `i `s
--> &U *U + &U F12001 * -> -> -> 62 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 987 `i `s
--> &U *U + &U F12001 * -> -> -> 63 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 981 `i `s
--> &U *U + &U F12001 * -> -> -> 64 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 974 `i `s
--> &U *U + &U F12001 * -> -> -> 65 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 967 `i `s
--> &U *U + &U F12001 * -> -> -> 66 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 960 `i `s
--> &U *U + &U F12001 * -> -> -> 67 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 952 `i `s
--> &U *U + &U F12001 * -> -> -> 68 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 943 `i `s
--> &U *U + &U F12001 * -> -> -> 69 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 935 `i `s
--> &U *U + &U F12001 * -> -> -> 70 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 925 `i `s
--> &U *U + &U F12001 * -> -> -> 71 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 916 `i `s
--> &U *U + &U F12001 * -> -> -> 72 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 906 `i `s
--> &U *U + &U F12001 * -> -> -> 73 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 895 `i `s
--> &U *U + &U F12001 * -> -> -> 74 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 884 `i `s
--> &U *U + &U F12001 * -> -> -> 75 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 873 `i `s
--> &U *U + &U F12001 * -> -> -> 76 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 862 `i `s
--> &U *U + &U F12001 * -> -> -> 77 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 850 `i `s
--> &U *U + &U F12001 * -> -> -> 78 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 838 `i `s
--> &U *U + &U F12001 * -> -> -> 79 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 825 `i `s
--> &U *U + &U F12001 * -> -> -> 80 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 812 `i `s
--> &U *U + &U F12001 * -> -> -> 81 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 799 `i `s
--> &U *U + &U F12001 * -> -> -> 82 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 786 `i `s
--> &U *U + &U F12001 * -> -> -> 83 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 772 `i `s
--> &U *U + &U F12001 * -> -> -> 84 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 758 `i `s
--> &U *U + &U F12001 * -> -> -> 85 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 744 `i `s
--> &U *U + &U F12001 * -> -> -> 86 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 729 `i `s
--> &U *U + &U F12001 * -> -> -> 87 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 715 `i `s
--> &U *U + &U F12001 * -> -> -> 88 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 700 `i `s
--> &U *U + &U F12001 * -> -> -> 89 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 685 `i `s
--> &U *U + &U F12001 * -> -> -> 90 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 670 `i `s
--> &U *U + &U F12001 * -> -> -> 91 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 654 `i `s
--> &U *U + &U F12001 * -> -> -> 92 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 639 `i `s
--> &U *U + &U F12001 * -> -> -> 93 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 623 `i `s
--> &U *U + &U F12001 * -> -> -> 94 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 607 `i `s
--> &U *U + &U F12001 * -> -> -> 95 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 592 `i `s
--> &U *U + &U F12001 * -> -> -> 96 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 576 `i `s
--> &U *U + &U F12001 * -> -> -> 97 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 560 `i `s
--> &U *U + &U F12001 * -> -> -> 98 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 544 `i `s
--> &U *U + &U F12001 * -> -> -> 99 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 528 `i `s
--> &U *U + &U F12001 * -> -> -> 100 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 512 `i `s
--> &U *U + &U F12001 * -> -> -> 101 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 495 `i `s
--> &U *U + &U F12001 * -> -> -> 102 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 479 `i `s
--> &U *U + &U F12001 * -> -> -> 103 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 463 `i `s
--> &U *U + &U F12001 * -> -> -> 104 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 447 `i `s
--> &U *U + &U F12001 * -> -> -> 105 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 431 `i `s
--> &U *U + &U F12001 * -> -> -> 106 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 416 `i `s
--> &U *U + &U F12001 * -> -> -> 107 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 400 `i `s
--> &U *U + &U F12001 * -> -> -> 108 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 384 `i `s
--> &U *U + &U F12001 * -> -> -> 109 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 369 `i `s
--> &U *U + &U F12001 * -> -> -> 110 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 353 `i `s
--> &U *U + &U F12001 * -> -> -> 111 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 338 `i `s
--> &U *U + &U F12001 * -> -> -> 112 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 323 `i `s
--> &U *U + &U F12001 * -> -> -> 113 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 308 `i `s
--> &U *U + &U F12001 * -> -> -> 114 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 294 `i `s
--> &U *U + &U F12001 * -> -> -> 115 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 279 `i `s
--> &U *U + &U F12001 * -> -> -> 116 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 265 `i `s
--> &U *U + &U F12001 * -> -> -> 117 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 251 `i `s
--> &U *U + &U F12001 * -> -> -> 118 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 237 `i `s
--> &U *U + &U F12001 * -> -> -> 119 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 224 `i `s
--> &U *U + &U F12001 * -> -> -> 120 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 211 `i `s
--> &U *U + &U F12001 * -> -> -> 121 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 198 `i `s
--> &U *U + &U F12001 * -> -> -> 122 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 185 `i `s
--> &U *U + &U F12001 * -> -> -> 123 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 173 `i `s
--> &U *U + &U F12001 * -> -> -> 124 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 161 `i `s
--> &U *U + &U F12001 * -> -> -> 125 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 150 `i `s
--> &U *U + &U F12001 * -> -> -> 126 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 139 `i `s
--> &U *U + &U F12001 * -> -> -> 127 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 128 `i `s
--> &U *U + &U F12001 * -> -> -> 128 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 117 `i `s
--> &U *U + &U F12001 * -> -> -> 129 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 107 `i `s
--> &U *U + &U F12001 * -> -> -> 130 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 98 `i `s
--> &U *U + &U F12001 * -> -> -> 131 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 88 `i `s
--> &U *U + &U F12001 * -> -> -> 132 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 80 `i `s
--> &U *U + &U F12001 * -> -> -> 133 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 71 `i `s
--> &U *U + &U F12001 * -> -> -> 134 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 63 `i `s
--> &U *U + &U F12001 * -> -> -> 135 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 56 `i `s
--> &U *U + &U F12001 * -> -> -> 136 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 49 `i `s
--> &U *U + &U F12001 * -> -> -> 137 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 42 `i `s
--> &U *U + &U F12001 * -> -> -> 138 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 36 `i `s
--> &U *U + &U F12001 * -> -> -> 139 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 30 `i `s
--> &U *U + &U F12001 * -> -> -> 140 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 25 `i `s
--> &U *U + &U F12001 * -> -> -> 141 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 20 `i `s
--> &U *U + &U F12001 * -> -> -> 142 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 16 `i `s
--> &U *U + &U F12001 * -> -> -> 143 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 12 `i `s
--> &U *U + &U F12001 * -> -> -> 144 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 9 `i `s
--> &U *U + &U F12001 * -> -> -> 145 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 6 `i `s
--> &U *U + &U F12001 * -> -> -> 146 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 4 `i `s
--> &U *U + &U F12001 * -> -> -> 147 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 2 `i `s
--> &U *U + &U F12001 * -> -> -> 148 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1 `i `s
--> &U *U + &U F12001 * -> -> -> 149 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 0 `i `s
--> &U *U + &U F12001 * -> -> -> 150 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 0 `i `s
--> &U *U + &U F12001 * -> -> -> 151 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 0 `i `s
--> &U *U + &U F12001 * -> -> -> 152 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 1 `i `s
--> &U *U + &U F12001 * -> -> -> 153 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 2 `i `s
--> &U *U + &U F12001 * -> -> -> 154 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 4 `i `s
--> &U *U + &U F12001 * -> -> -> 155 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 6 `i `s
--> &U *U + &U F12001 * -> -> -> 156 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 9 `i `s
--> &U *U + &U F12001 * -> -> -> 157 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 12 `i `s
--> &U *U + &U F12001 * -> -> -> 158 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 16 `i `s
--> &U *U + &U F12001 * -> -> -> 159 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 20 `i `s
--> &U *U + &U F12001 * -> -> -> 160 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 25 `i `s
--> &U *U + &U F12001 * -> -> -> 161 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 30 `i `s
--> &U *U + &U F12001 * -> -> -> 162 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 36 `i `s
--> &U *U + &U F12001 * -> -> -> 163 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 42 `i `s
--> &U *U + &U F12001 * -> -> -> 164 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 49 `i `s
--> &U *U + &U F12001 * -> -> -> 165 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 56 `i `s
--> &U *U + &U F12001 * -> -> -> 166 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 63 `i `s
--> &U *U + &U F12001 * -> -> -> 167 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 71 `i `s
--> &U *U + &U F12001 * -> -> -> 168 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 80 `i `s
--> &U *U + &U F12001 * -> -> -> 169 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 88 `i `s
--> &U *U + &U F12001 * -> -> -> 170 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 98 `i `s
--> &U *U + &U F12001 * -> -> -> 171 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 107 `i `s
--> &U *U + &U F12001 * -> -> -> 172 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 117 `i `s
--> &U *U + &U F12001 * -> -> -> 173 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 128 `i `s
--> &U *U + &U F12001 * -> -> -> 174 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 139 `i `s
--> &U *U + &U F12001 * -> -> -> 175 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 150 `i `s
--> &U *U + &U F12001 * -> -> -> 176 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 161 `i `s
--> &U *U + &U F12001 * -> -> -> 177 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 173 `i `s
--> &U *U + &U F12001 * -> -> -> 178 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 185 `i `s
--> &U *U + &U F12001 * -> -> -> 179 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 198 `i `s
--> &U *U + &U F12001 * -> -> -> 180 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 211 `i `s
--> &U *U + &U F12001 * -> -> -> 181 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 224 `i `s
--> &U *U + &U F12001 * -> -> -> 182 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 237 `i `s
--> &U *U + &U F12001 * -> -> -> 183 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 251 `i `s
--> &U *U + &U F12001 * -> -> -> 184 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 265 `i `s
--> &U *U + &U F12001 * -> -> -> 185 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 279 `i `s
--> &U *U + &U F12001 * -> -> -> 186 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 294 `i `s
--> &U *U + &U F12001 * -> -> -> 187 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 308 `i `s
--> &U *U + &U F12001 * -> -> -> 188 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 323 `i `s
--> &U *U + &U F12001 * -> -> -> 189 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 338 `i `s
--> &U *U + &U F12001 * -> -> -> 190 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 353 `i `s
--> &U *U + &U F12001 * -> -> -> 191 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 369 `i `s
--> &U *U + &U F12001 * -> -> -> 192 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 384 `i `s
--> &U *U + &U F12001 * -> -> -> 193 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 400 `i `s
--> &U *U + &U F12001 * -> -> -> 194 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 416 `i `s
--> &U *U + &U F12001 * -> -> -> 195 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 431 `i `s
--> &U *U + &U F12001 * -> -> -> 196 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 447 `i `s
--> &U *U + &U F12001 * -> -> -> 197 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 463 `i `s
--> &U *U + &U F12001 * -> -> -> 198 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 479 `i `s
--> &U *U + &U F12001 * -> -> -> 199 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 495 `i `s
--> &U *U + &U F12001 * -> -> -> 200 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-:U ..
--> -> 512 `i `s
--> &U *U + &U F12001 * -> -> -> 0 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731
-..
-..
-]
-"69
-[; ;Sensor_Main.c: 69:     current = (Node*)&Sine_Sample[0];
-[e = _current -> &U *U + &U F12001 * -> -> -> 0 `i `ui `ux -> -> # *U &U F12001 `ui `ux `*S1731 ]
-"71
-[; ;Sensor_Main.c: 71:     OSCCON = 0xF4;
+"65
+[; ;Sensor_Main.c: 65:     OSCCON = 0xF4;
 [e = _OSCCON -> -> 244 `i `uc ]
-"72
-[; ;Sensor_Main.c: 72:     while(OSCSTATbits.HFIOFR == 0);
+"66
+[; ;Sensor_Main.c: 66:     while(OSCSTATbits.HFIOFR == 0);
 [e $U 1733  ]
 [e :U 1734 ]
 [e :U 1733 ]
 [e $ == -> . . _OSCSTATbits 0 4 `i -> 0 `i 1734  ]
 [e :U 1735 ]
-"74
-[; ;Sensor_Main.c: 74:     TRISBbits.TRISB0=0;
+"68
+[; ;Sensor_Main.c: 68:     TRISBbits.TRISB0=0;
 [e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
-"75
-[; ;Sensor_Main.c: 75:     TRISBbits.TRISB1=1;
+"69
+[; ;Sensor_Main.c: 69:     TRISBbits.TRISB1=1;
 [e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-"76
-[; ;Sensor_Main.c: 76:     ANSELBbits.ANSB0=0;
+"70
+[; ;Sensor_Main.c: 70:     TRISBbits.TRISB2=1;
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+"71
+[; ;Sensor_Main.c: 71:     TRISBbits.TRISB3=1;
+[e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
+"72
+[; ;Sensor_Main.c: 72:     ANSELBbits.ANSB0=0;
 [e = . . _ANSELBbits 0 0 -> -> 0 `i `uc ]
-"77
-[; ;Sensor_Main.c: 77:     ANSELBbits.ANSB1=0;
+"73
+[; ;Sensor_Main.c: 73:     ANSELBbits.ANSB1=0;
 [e = . . _ANSELBbits 0 1 -> -> 0 `i `uc ]
-"79
-[; ;Sensor_Main.c: 79:     TRISA = 251;
+"74
+[; ;Sensor_Main.c: 74:     ANSELBbits.ANSB2=0;
+[e = . . _ANSELBbits 0 2 -> -> 0 `i `uc ]
+"75
+[; ;Sensor_Main.c: 75:     ANSELBbits.ANSB3=0;
+[e = . . _ANSELBbits 0 3 -> -> 0 `i `uc ]
+"77
+[; ;Sensor_Main.c: 77:     TRISA = 251;
 [e = _TRISA -> -> 251 `i `uc ]
-"80
-[; ;Sensor_Main.c: 80:     DAC1CON0 = 160;
+"78
+[; ;Sensor_Main.c: 78:     DAC1CON0 = 160;
 [e = _DAC1CON0 -> -> 160 `i `uc ]
-"82
-[; ;Sensor_Main.c: 82:     long unsigned int duration=0;
+"79
+[; ;Sensor_Main.c: 79:     DAC1REFH = 1;
+[e = _DAC1REFH -> -> 1 `i `uc ]
+"80
+[; ;Sensor_Main.c: 80:     long unsigned int duration=0;
 [v _duration `ul ~T0 @X0 1 a ]
 [e = _duration -> -> -> 0 `i `l `ul ]
-"84
-[; ;Sensor_Main.c: 84:     ConfigureTimer1();
+"82
+[; ;Sensor_Main.c: 82:     ConfigureTimer1();
 [e ( _ConfigureTimer1 ..  ]
-"85
-[; ;Sensor_Main.c: 85:     ConfigureTimer2();
+"83
+[; ;Sensor_Main.c: 83:     ConfigureTimer2();
 [e ( _ConfigureTimer2 ..  ]
-"86
-[; ;Sensor_Main.c: 86:     ConfigureTimer4();
+"84
+[; ;Sensor_Main.c: 84:     ConfigureTimer4();
 [e ( _ConfigureTimer4 ..  ]
-"108
-[; ;Sensor_Main.c: 108:     audio_output=0;
-[e = _audio_output -> -> 0 `i `s ]
-"110
-[; ;Sensor_Main.c: 110:     while(1)
-[e :U 1737 ]
-"111
-[; ;Sensor_Main.c: 111:     {
+"90
+[; ;Sensor_Main.c: 90:     { T2PR = 1; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
 {
-"112
-[; ;Sensor_Main.c: 112:             PORTBbits.RB0 = 0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"113
-[; ;Sensor_Main.c: 113:             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
-{
-[e = _T4PR -> -> 20 `i `uc ]
-[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
-[e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
-}
-"114
-[; ;Sensor_Main.c: 114:             { while(!PIR4bits.TMR4IF); PIR4bits.TMR4IF = 0; };
-{
-[e $U 1739  ]
-[e :U 1740 ]
-[e :U 1739 ]
-[e $ ! != -> . . _PIR4bits 0 0 `i -> 0 `i 1740  ]
-[e :U 1741 ]
-[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
-}
-"116
-[; ;Sensor_Main.c: 116:             PORTBbits.RB0 = 1;
-[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"117
-[; ;Sensor_Main.c: 117:             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
-{
-[e = _T4PR -> -> 20 `i `uc ]
-[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
-[e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
-}
-"118
-[; ;Sensor_Main.c: 118:             { while(!PIR4bits.TMR4IF); PIR4bits.TMR4IF = 0; };
-{
-[e $U 1742  ]
-[e :U 1743 ]
-[e :U 1742 ]
-[e $ ! != -> . . _PIR4bits 0 0 `i -> 0 `i 1743  ]
-[e :U 1744 ]
-[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
-}
-"120
-[; ;Sensor_Main.c: 120:             PORTBbits.RB0 = 0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"121
-[; ;Sensor_Main.c: 121:             __nop();
-[e ( ___nop ..  ]
-"122
-[; ;Sensor_Main.c: 122:             while(PORTBbits.RB1 == 0)
-[e $U 1745  ]
-[e :U 1746 ]
-"123
-[; ;Sensor_Main.c: 123:             {
-{
-"124
-[; ;Sensor_Main.c: 124:                 { DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; };
-{
-[e = _DAC1REFL -> . *U _current 0 `uc ]
-[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
-[e = _current . *U _current 1 ]
-{
-[e $U 1748  ]
-[e :U 1749 ]
-[e :U 1748 ]
-[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1749  ]
-[e :U 1750 ]
+[e = _T2PR -> -> 1 `i `uc ]
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
 }
-}
-"125
-[; ;Sensor_Main.c: 125:             }
-}
-[e :U 1745 ]
-"122
-[; ;Sensor_Main.c: 122:             while(PORTBbits.RB1 == 0)
-[e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 1746  ]
-[e :U 1747 ]
-"127
-[; ;Sensor_Main.c: 127:             { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+"113
+[; ;Sensor_Main.c: 113:     audio_output=0;
+[e = _audio_output -> -> 0 `i `s ]
+"114
+[; ;Sensor_Main.c: 114:     volatile char hold=0;
+[v _hold `Vuc ~T0 @X0 1 a ]
+[e = _hold -> -> 0 `i `uc ]
+"115
+[; ;Sensor_Main.c: 115:     volatile char button_counter=0;
+[v _button_counter `Vuc ~T0 @X0 1 a ]
+[e = _button_counter -> -> 0 `i `uc ]
+"116
+[; ;Sensor_Main.c: 116:     while(1)
+[e :U 1737 ]
+"117
+[; ;Sensor_Main.c: 117:     {
+{
+"118
+[; ;Sensor_Main.c: 118:         { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
 {
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 [e = _TMR1H -> -> 0 `i `uc ]
 [e = _TMR1L -> -> 0 `i `uc ]
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
 }
-"128
-[; ;Sensor_Main.c: 128:             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
-[e $U 1751  ]
-[e :U 1752 ]
-"129
-[; ;Sensor_Main.c: 129:             {
+"119
+[; ;Sensor_Main.c: 119:         if(PORTBbits.RB3==1)
+[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1739  ]
+"120
+[; ;Sensor_Main.c: 120:         {
 {
-"130
-[; ;Sensor_Main.c: 130:                 { DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; };
+"122
+[; ;Sensor_Main.c: 122:             PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"123
+[; ;Sensor_Main.c: 123:             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
+{
+[e = _T4PR -> -> 20 `i `uc ]
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+[e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
+}
+"124
+[; ;Sensor_Main.c: 124:             { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+{
+[e $U 1740  ]
+[e :U 1741 ]
+{
+{
+[e $ ! != -> _audio_output `i -> 0 `i 1743  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
 [e = _current . *U _current 1 ]
 {
-[e $U 1754  ]
-[e :U 1755 ]
-[e :U 1754 ]
-[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1755  ]
-[e :U 1756 ]
+[e $U 1744  ]
+[e :U 1745 ]
+[e :U 1744 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1745  ]
+[e :U 1746 ]
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 }
 }
-"131
-[; ;Sensor_Main.c: 131:             }
+[e :U 1743 ]
 }
-[e :U 1751 ]
+}
+[e :U 1740 ]
+[e $ ! != -> . . _PIR4bits 0 0 `i -> 0 `i 1741  ]
+[e :U 1742 ]
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+}
+"126
+[; ;Sensor_Main.c: 126:             PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+"127
+[; ;Sensor_Main.c: 127:             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
+{
+[e = _T4PR -> -> 20 `i `uc ]
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+[e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
+}
 "128
-[; ;Sensor_Main.c: 128:             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
-[e $ && == -> . . _PIR1bits 0 0 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 1 `i 1752  ]
+[; ;Sensor_Main.c: 128:             { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+{
+[e $U 1747  ]
+[e :U 1748 ]
+{
+{
+[e $ ! != -> _audio_output `i -> 0 `i 1750  ]
+{
+[e = _DAC1REFL -> . *U _current 0 `uc ]
+[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
+[e = _current . *U _current 1 ]
+{
+[e $U 1751  ]
+[e :U 1752 ]
+[e :U 1751 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1752  ]
 [e :U 1753 ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+}
+}
+[e :U 1750 ]
+}
+}
+[e :U 1747 ]
+[e $ ! != -> . . _PIR4bits 0 0 `i -> 0 `i 1748  ]
+[e :U 1749 ]
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+}
+"130
+[; ;Sensor_Main.c: 130:             PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"131
+[; ;Sensor_Main.c: 131:             __nop();
+[e ( ___nop ..  ]
+"132
+[; ;Sensor_Main.c: 132:             while(PORTBbits.RB1 == 0)
+[e $U 1754  ]
+[e :U 1755 ]
 "133
-[; ;Sensor_Main.c: 133:             duration = TMR1H;
-[e = _duration -> _TMR1H `ul ]
+[; ;Sensor_Main.c: 133:             {
+{
 "134
-[; ;Sensor_Main.c: 134:             duration = (duration<<8)+TMR1L;
-[e = _duration + << _duration -> 8 `i -> _TMR1L `ul ]
+[; ;Sensor_Main.c: 134:                 { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+{
+[e $ ! != -> _audio_output `i -> 0 `i 1757  ]
+{
+[e = _DAC1REFL -> . *U _current 0 `uc ]
+[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
+[e = _current . *U _current 1 ]
+{
+[e $U 1758  ]
+[e :U 1759 ]
+[e :U 1758 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1759  ]
+[e :U 1760 ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+}
+}
+[e :U 1757 ]
+}
+"135
+[; ;Sensor_Main.c: 135:             }
+}
+[e :U 1754 ]
+"132
+[; ;Sensor_Main.c: 132:             while(PORTBbits.RB1 == 0)
+[e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 1755  ]
+[e :U 1756 ]
 "137
-[; ;Sensor_Main.c: 137:             long unsigned int timer2p=(duration << 4)+(duration<<2);
+[; ;Sensor_Main.c: 137:             { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+{
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[e = _TMR1H -> -> 0 `i `uc ]
+[e = _TMR1L -> -> 0 `i `uc ]
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+}
+"138
+[; ;Sensor_Main.c: 138:             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
+[e $U 1761  ]
+[e :U 1762 ]
+"139
+[; ;Sensor_Main.c: 139:             {
+{
+"140
+[; ;Sensor_Main.c: 140:                 { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+{
+[e $ ! != -> _audio_output `i -> 0 `i 1764  ]
+{
+[e = _DAC1REFL -> . *U _current 0 `uc ]
+[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
+[e = _current . *U _current 1 ]
+{
+[e $U 1765  ]
+[e :U 1766 ]
+[e :U 1765 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1766  ]
+[e :U 1767 ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+}
+}
+[e :U 1764 ]
+}
+"141
+[; ;Sensor_Main.c: 141:             }
+}
+[e :U 1761 ]
+"138
+[; ;Sensor_Main.c: 138:             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
+[e $ && == -> . . _PIR1bits 0 0 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 1 `i 1762  ]
+[e :U 1763 ]
+"143
+[; ;Sensor_Main.c: 143:             duration = TMR1H;
+[e = _duration -> _TMR1H `ul ]
+"144
+[; ;Sensor_Main.c: 144:             duration = (duration<<8)+TMR1L;
+[e = _duration + << _duration -> 8 `i -> _TMR1L `ul ]
+"147
+[; ;Sensor_Main.c: 147:             long unsigned int timer2p=(duration << 4)+(duration<<2);
 [v _timer2p `ul ~T0 @X0 1 a ]
 [e = _timer2p + << _duration -> 4 `i << _duration -> 2 `i ]
-"138
-[; ;Sensor_Main.c: 138:             timer2p =timer2p>>10;
+"148
+[; ;Sensor_Main.c: 148:             timer2p = timer2p>>10;
 [e = _timer2p >> _timer2p -> 10 `i ]
-"139
-[; ;Sensor_Main.c: 139:             if(timer2p<255)
-[e $ ! < _timer2p -> -> -> 255 `i `l `ul 1757  ]
-"140
-[; ;Sensor_Main.c: 140:             {
+"149
+[; ;Sensor_Main.c: 149:             if(timer2p<80)
+[e $ ! < _timer2p -> -> -> 80 `i `l `ul 1768  ]
+"150
+[; ;Sensor_Main.c: 150:             {
 {
-"141
-[; ;Sensor_Main.c: 141:                 { T2PR = (char)timer2p; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
+"151
+[; ;Sensor_Main.c: 151:                 { T2PR = (char)timer2p; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
 {
 [e = _T2PR -> -> _timer2p `uc `uc ]
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 [e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
 }
-"142
-[; ;Sensor_Main.c: 142:             }
+"152
+[; ;Sensor_Main.c: 152:                 audio_output=1;
+[e = _audio_output -> -> 1 `i `s ]
+"153
+[; ;Sensor_Main.c: 153:             }
 }
-[e $U 1758  ]
-"143
-[; ;Sensor_Main.c: 143:             else
-[e :U 1757 ]
-"144
-[; ;Sensor_Main.c: 144:             {
+[e $U 1769  ]
+"154
+[; ;Sensor_Main.c: 154:             else
+[e :U 1768 ]
+"155
+[; ;Sensor_Main.c: 155:             {
 {
-"145
-[; ;Sensor_Main.c: 145:                 PIR1bits.TMR2IF=1;
+"156
+[; ;Sensor_Main.c: 156:                 PIR1bits.TMR2IF=1;
 [e = . . _PIR1bits 0 1 -> -> 1 `i `uc ]
-"146
-[; ;Sensor_Main.c: 146:             }
+"157
+[; ;Sensor_Main.c: 157:                 audio_output=0;
+[e = _audio_output -> -> 0 `i `s ]
+"158
+[; ;Sensor_Main.c: 158:             }
 }
-[e :U 1758 ]
-"148
-[; ;Sensor_Main.c: 148:             while(PIR1bits.TMR1IF==0)
-[e $U 1759  ]
-[e :U 1760 ]
-"149
-[; ;Sensor_Main.c: 149:             {
+[e :U 1769 ]
+"160
+[; ;Sensor_Main.c: 160:             while(PIR1bits.TMR1IF==0)
+[e $U 1770  ]
+[e :U 1771 ]
+"161
+[; ;Sensor_Main.c: 161:             {
 {
-"150
-[; ;Sensor_Main.c: 150:                 { DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; };
+"162
+[; ;Sensor_Main.c: 162:                 { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+{
+[e $ ! != -> _audio_output `i -> 0 `i 1773  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
 [e = _current . *U _current 1 ]
 {
-[e $U 1762  ]
-[e :U 1763 ]
-[e :U 1762 ]
-[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1763  ]
-[e :U 1764 ]
+[e $U 1774  ]
+[e :U 1775 ]
+[e :U 1774 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1775  ]
+[e :U 1776 ]
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 }
 }
-"151
-[; ;Sensor_Main.c: 151:             }
+[e :U 1773 ]
 }
-[e :U 1759 ]
-"148
-[; ;Sensor_Main.c: 148:             while(PIR1bits.TMR1IF==0)
-[e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1760  ]
-[e :U 1761 ]
-"153
-[; ;Sensor_Main.c: 153:     }
+"163
+[; ;Sensor_Main.c: 163:             }
+}
+[e :U 1770 ]
+"160
+[; ;Sensor_Main.c: 160:             while(PIR1bits.TMR1IF==0)
+[e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1771  ]
+[e :U 1772 ]
+"165
+[; ;Sensor_Main.c: 165:         }
+}
+[e $U 1777  ]
+"166
+[; ;Sensor_Main.c: 166:         else
+[e :U 1739 ]
+"167
+[; ;Sensor_Main.c: 167:         {
+{
+"170
+[; ;Sensor_Main.c: 170:             if(button_counter)
+[e $ ! != -> _button_counter `i -> 0 `i 1778  ]
+"171
+[; ;Sensor_Main.c: 171:             {
+{
+"172
+[; ;Sensor_Main.c: 172:                 button_counter=0;
+[e = _button_counter -> -> 0 `i `uc ]
+"174
+[; ;Sensor_Main.c: 174:                 PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"175
+[; ;Sensor_Main.c: 175:                 { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
+{
+[e = _T4PR -> -> 20 `i `uc ]
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+[e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
+}
+"176
+[; ;Sensor_Main.c: 176:                 { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+{
+[e $U 1779  ]
+[e :U 1780 ]
+{
+{
+[e $ ! != -> _audio_output `i -> 0 `i 1782  ]
+{
+[e = _DAC1REFL -> . *U _current 0 `uc ]
+[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
+[e = _current . *U _current 1 ]
+{
+[e $U 1783  ]
+[e :U 1784 ]
+[e :U 1783 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1784  ]
+[e :U 1785 ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+}
+}
+[e :U 1782 ]
+}
+}
+[e :U 1779 ]
+[e $ ! != -> . . _PIR4bits 0 0 `i -> 0 `i 1780  ]
+[e :U 1781 ]
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+}
+"178
+[; ;Sensor_Main.c: 178:                 PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+"179
+[; ;Sensor_Main.c: 179:                 { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
+{
+[e = _T4PR -> -> 20 `i `uc ]
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+[e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
+}
+"180
+[; ;Sensor_Main.c: 180:                 { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+{
+[e $U 1786  ]
+[e :U 1787 ]
+{
+{
+[e $ ! != -> _audio_output `i -> 0 `i 1789  ]
+{
+[e = _DAC1REFL -> . *U _current 0 `uc ]
+[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
+[e = _current . *U _current 1 ]
+{
+[e $U 1790  ]
+[e :U 1791 ]
+[e :U 1790 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1791  ]
+[e :U 1792 ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+}
+}
+[e :U 1789 ]
+}
+}
+[e :U 1786 ]
+[e $ ! != -> . . _PIR4bits 0 0 `i -> 0 `i 1787  ]
+[e :U 1788 ]
+[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
+}
+"182
+[; ;Sensor_Main.c: 182:                 PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"183
+[; ;Sensor_Main.c: 183:                 __nop();
+[e ( ___nop ..  ]
+"184
+[; ;Sensor_Main.c: 184:                 while(PORTBbits.RB1 == 0){};
+[e $U 1793  ]
+[e :U 1794 ]
+{
+}
+[e :U 1793 ]
+[e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 1794  ]
+[e :U 1795 ]
+"185
+[; ;Sensor_Main.c: 185:                 { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+{
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[e = _TMR1H -> -> 0 `i `uc ]
+[e = _TMR1L -> -> 0 `i `uc ]
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+}
+"187
+[; ;Sensor_Main.c: 187:                 while(PORTBbits.RB1 == 1&&PIR1bits.TMR1IF==0){};
+[e $U 1796  ]
+[e :U 1797 ]
+{
+}
+[e :U 1796 ]
+[e $ && == -> . . _PORTBbits 0 1 `i -> 1 `i == -> . . _PIR1bits 0 0 `i -> 0 `i 1797  ]
+[e :U 1798 ]
+"189
+[; ;Sensor_Main.c: 189:                 if(PIR1bits.TMR1IF==1)
+[e $ ! == -> . . _PIR1bits 0 0 `i -> 1 `i 1799  ]
+"190
+[; ;Sensor_Main.c: 190:                     continue;
+[e $U 1736  ]
+[e :U 1799 ]
+"191
+[; ;Sensor_Main.c: 191:                 duration = TMR1H;
+[e = _duration -> _TMR1H `ul ]
+"192
+[; ;Sensor_Main.c: 192:                 duration = (duration<<8)+TMR1L;
+[e = _duration + << _duration -> 8 `i -> _TMR1L `ul ]
+"195
+[; ;Sensor_Main.c: 195:                 long unsigned int timer2p=(duration << 4)+(duration<<2);
+[v _timer2p `ul ~T0 @X0 1 a ]
+[e = _timer2p + << _duration -> 4 `i << _duration -> 2 `i ]
+"196
+[; ;Sensor_Main.c: 196:                 timer2p = timer2p>>10;
+[e = _timer2p >> _timer2p -> 10 `i ]
+"197
+[; ;Sensor_Main.c: 197:                 if(timer2p<80)
+[e $ ! < _timer2p -> -> -> 80 `i `l `ul 1800  ]
+"198
+[; ;Sensor_Main.c: 198:                 {
+{
+"199
+[; ;Sensor_Main.c: 199:                     { T2PR = (char)timer2p; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
+{
+[e = _T2PR -> -> _timer2p `uc `uc ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
+}
+"200
+[; ;Sensor_Main.c: 200:                     audio_output=1;
+[e = _audio_output -> -> 1 `i `s ]
+"201
+[; ;Sensor_Main.c: 201:                 }
+}
+[e $U 1801  ]
+"202
+[; ;Sensor_Main.c: 202:                 else
+[e :U 1800 ]
+"203
+[; ;Sensor_Main.c: 203:                 {
+{
+"204
+[; ;Sensor_Main.c: 204:                     PIR1bits.TMR2IF=1;
+[e = . . _PIR1bits 0 1 -> -> 1 `i `uc ]
+"205
+[; ;Sensor_Main.c: 205:                     audio_output=0;
+[e = _audio_output -> -> 0 `i `s ]
+"206
+[; ;Sensor_Main.c: 206:                 }
+}
+[e :U 1801 ]
+"209
+[; ;Sensor_Main.c: 209:                 int play_count=10;
+[v _play_count `i ~T0 @X0 1 a ]
+[e = _play_count -> 10 `i ]
+"210
+[; ;Sensor_Main.c: 210:                 while(play_count>0)
+[e $U 1802  ]
+[e :U 1803 ]
+"211
+[; ;Sensor_Main.c: 211:                 {
+{
+"212
+[; ;Sensor_Main.c: 212:                     { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+{
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[e = _TMR1H -> -> 0 `i `uc ]
+[e = _TMR1L -> -> 0 `i `uc ]
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+}
+"213
+[; ;Sensor_Main.c: 213:                     while(PIR1bits.TMR1IF==0)
+[e $U 1805  ]
+[e :U 1806 ]
+"214
+[; ;Sensor_Main.c: 214:                     {
+{
+"215
+[; ;Sensor_Main.c: 215:                         { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+{
+[e $ ! != -> _audio_output `i -> 0 `i 1808  ]
+{
+[e = _DAC1REFL -> . *U _current 0 `uc ]
+[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
+[e = _current . *U _current 1 ]
+{
+[e $U 1809  ]
+[e :U 1810 ]
+[e :U 1809 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1810  ]
+[e :U 1811 ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+}
+}
+[e :U 1808 ]
+}
+"216
+[; ;Sensor_Main.c: 216:                     }
+}
+[e :U 1805 ]
+"213
+[; ;Sensor_Main.c: 213:                     while(PIR1bits.TMR1IF==0)
+[e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1806  ]
+[e :U 1807 ]
+"217
+[; ;Sensor_Main.c: 217:                     play_count--;
+[e -- _play_count -> 1 `i ]
+"218
+[; ;Sensor_Main.c: 218:                 }
+}
+[e :U 1802 ]
+"210
+[; ;Sensor_Main.c: 210:                 while(play_count>0)
+[e $ > _play_count -> 0 `i 1803  ]
+[e :U 1804 ]
+"219
+[; ;Sensor_Main.c: 219:             }
+}
+[e $U 1812  ]
+"220
+[; ;Sensor_Main.c: 220:             else
+[e :U 1778 ]
+"221
+[; ;Sensor_Main.c: 221:             {
+{
+"222
+[; ;Sensor_Main.c: 222:                 if(PORTBbits.RB2==1 && hold==0)
+[e $ ! && == -> . . _PORTBbits 0 2 `i -> 1 `i == -> _hold `i -> 0 `i 1813  ]
+"223
+[; ;Sensor_Main.c: 223:                 {
+{
+"224
+[; ;Sensor_Main.c: 224:                     hold=1;
+[e = _hold -> -> 1 `i `uc ]
+"225
+[; ;Sensor_Main.c: 225:                     button_counter=1;
+[e = _button_counter -> -> 1 `i `uc ]
+"226
+[; ;Sensor_Main.c: 226:                 }
+}
+[e $U 1814  ]
+"227
+[; ;Sensor_Main.c: 227:                 else if(PORTBbits.RB2==1 && hold==1)
+[e :U 1813 ]
+[e $ ! && == -> . . _PORTBbits 0 2 `i -> 1 `i == -> _hold `i -> 1 `i 1815  ]
+"228
+[; ;Sensor_Main.c: 228:                 {
+{
+"229
+[; ;Sensor_Main.c: 229:                     continue;
+[e $U 1736  ]
+"230
+[; ;Sensor_Main.c: 230:                 }
+}
+[e $U 1816  ]
+"231
+[; ;Sensor_Main.c: 231:                 else
+[e :U 1815 ]
+"232
+[; ;Sensor_Main.c: 232:                 {
+{
+"233
+[; ;Sensor_Main.c: 233:                     hold=0;
+[e = _hold -> -> 0 `i `uc ]
+"234
+[; ;Sensor_Main.c: 234:                     button_counter=0;
+[e = _button_counter -> -> 0 `i `uc ]
+"235
+[; ;Sensor_Main.c: 235:                 }
+}
+[e :U 1816 ]
+[e :U 1814 ]
+"236
+[; ;Sensor_Main.c: 236:             }
+}
+[e :U 1812 ]
+"237
+[; ;Sensor_Main.c: 237:         { while(PIR1bits.TMR1IF==0); };
+{
+[e $U 1817  ]
+[e :U 1818 ]
+[e :U 1817 ]
+[e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1818  ]
+[e :U 1819 ]
+}
+"238
+[; ;Sensor_Main.c: 238:         }
+}
+[e :U 1777 ]
+"240
+[; ;Sensor_Main.c: 240:     }
 }
 [e :U 1736 ]
 [e $U 1737  ]
 [e :U 1738 ]
-"155
-[; ;Sensor_Main.c: 155: }
+"242
+[; ;Sensor_Main.c: 242: }
 [e :UE 1732 ]
 }
-"158
-[; ;Sensor_Main.c: 158: void write2DAC(short WriteValue)
-[v _write2DAC `(v ~T0 @X0 1 ef1`s ]
-"159
-[; ;Sensor_Main.c: 159: {
-{
-[e :U _write2DAC ]
-"158
-[; ;Sensor_Main.c: 158: void write2DAC(short WriteValue)
-[v _WriteValue `s ~T0 @X0 1 r1 ]
-"159
-[; ;Sensor_Main.c: 159: {
-[f ]
-"160
-[; ;Sensor_Main.c: 160:     DAC1REFH = WriteValue>>8;
-[e = _DAC1REFH -> >> -> _WriteValue `i -> 8 `i `uc ]
-"161
-[; ;Sensor_Main.c: 161:     short temp = WriteValue<<8;
-[v _temp `s ~T0 @X0 1 a ]
-[e = _temp -> << -> _WriteValue `i -> 8 `i `s ]
-"162
-[; ;Sensor_Main.c: 162:     DAC1REFL = temp>>8;
-[e = _DAC1REFL -> >> -> _temp `i -> 8 `i `uc ]
-"163
-[; ;Sensor_Main.c: 163:     DACLDbits.DAC1LD = 1;
-[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
-"164
-[; ;Sensor_Main.c: 164: }
-[e :UE 1765 ]
-}
 [v $root$_playSineWave `(v ~T0 @X0 0 e ]
-"167
-[; ;Sensor_Main.c: 167: void __attribute__((picinterrupt(("")))) playSineWave(void)
+"244
+[; ;Sensor_Main.c: 244: void __attribute__((picinterrupt(("")))) playSineWave(void)
 [v _playSineWave `(v ~T2 @X0 1 ef ]
-"168
-[; ;Sensor_Main.c: 168: {
+"245
+[; ;Sensor_Main.c: 245: {
 {
 [e :U _playSineWave ]
 [f ]
-"169
-[; ;Sensor_Main.c: 169:     DAC1REFL = current->item;
+"246
+[; ;Sensor_Main.c: 246:     if(audio_output){
+[e $ ! != -> _audio_output `i -> 0 `i 1821  ]
+{
+"247
+[; ;Sensor_Main.c: 247:         DAC1REFL = current->item;
 [e = _DAC1REFL -> . *U _current 0 `uc ]
-"170
-[; ;Sensor_Main.c: 170:     DACLDbits.DAC1LD = 1;
+"248
+[; ;Sensor_Main.c: 248:         DACLDbits.DAC1LD = 1;
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
-"171
-[; ;Sensor_Main.c: 171:     current = current->next;
+"249
+[; ;Sensor_Main.c: 249:         current = current->next;
 [e = _current . *U _current 1 ]
-"173
-[; ;Sensor_Main.c: 173: }
-[e :UE 1766 ]
+"250
+[; ;Sensor_Main.c: 250:         { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; };
+{
+[e $U 1822  ]
+[e :U 1823 ]
+[e :U 1822 ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1823  ]
+[e :U 1824 ]
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+}
+"251
+[; ;Sensor_Main.c: 251:     }
+}
+[e :U 1821 ]
+"252
+[; ;Sensor_Main.c: 252: }
+[e :UE 1820 ]
 }

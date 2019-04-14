@@ -1760,11 +1760,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Timer.c: 20:     T2PR = 0;
 [e = _T2PR -> -> 0 `i `uc ]
 "24
-[; ;Timer.c: 24:     T2CLKCON = 0x02;
-[e = _T2CLKCON -> -> 2 `i `uc ]
+[; ;Timer.c: 24:     T2CLKCON = 0x03;
+[e = _T2CLKCON -> -> 3 `i `uc ]
 "30
-[; ;Timer.c: 30:     T2CON = 0xD0;
-[e = _T2CON -> -> 208 `i `uc ]
+[; ;Timer.c: 30:     T2CON = 0xB0;
+[e = _T2CON -> -> 176 `i `uc ]
 "31
 [; ;Timer.c: 31:     PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]

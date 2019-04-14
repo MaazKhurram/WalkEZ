@@ -19448,13 +19448,13 @@ void ConfigureTimer2()
 
 
 
-    T2CLKCON = 0x02;
+    T2CLKCON = 0x03;
 
 
 
 
 
-    T2CON = 0xD0;
+    T2CON = 0xB0;
     PIR1bits.TMR2IF = 0;
     return;
 }
