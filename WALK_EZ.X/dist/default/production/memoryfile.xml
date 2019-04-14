@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\WALK_EZ.X.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>16384</length>
+      <used>1010</used>
+      <free>15374</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>2016</length>
+      <used>34</used>
+      <free>1982</free>
+    </memory>
+  </executable>
+</project>

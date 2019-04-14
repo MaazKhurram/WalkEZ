@@ -74,4 +74,3 @@ void ConfigureTimer4();
 
 
 #endif	/* LAB2_LIBRARY_H */
-
