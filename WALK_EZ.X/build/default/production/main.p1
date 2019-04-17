@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"11 main.c
-[; ;main.c: 11: typedef struct sine_node{
+"12 main.c
+[; ;main.c: 12: typedef struct sine_node{
 [s S1731 `s 1 `*S1731 1 ]
 [n S1731 sine_node item next ]
 [p mainexit ]
@@ -46,9 +46,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13121
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13121: extern volatile unsigned char DAC1CON0 __attribute__((address(0x58E)));
 [v _DAC1CON0 `Vuc ~T0 @X0 0 e@1422 ]
-"13768
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13768: extern volatile unsigned char DAC1REFH __attribute__((address(0x590)));
-[v _DAC1REFH `Vuc ~T0 @X0 0 e@1424 ]
 "19 ./Timer.h
 [; ;./Timer.h: 19: void ConfigureTimer1();
 [v _ConfigureTimer1 `(v ~T0 @X0 0 e? ]
@@ -99,6 +96,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11596
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 11596: extern volatile T2CONbits_t T2CONbits __attribute__((address(0x495)));
 [v _T2CONbits `VS570 ~T0 @X0 0 e@1173 ]
+"13346
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13346: extern volatile unsigned char DAC1REFL __attribute__((address(0x58F)));
+[v _DAC1REFL `Vuc ~T0 @X0 0 e@1423 ]
+"13768
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13768: extern volatile unsigned char DAC1REFH __attribute__((address(0x590)));
+[v _DAC1REFH `Vuc ~T0 @X0 0 e@1424 ]
+"13094
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13094:     struct {
+[s S662 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S662 . DAC1LD DAC2LD . DAC5LD ]
+"13093
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13093: typedef union {
+[u S661 `S662 1 ]
+[n S661 . . ]
+"13101
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13101: extern volatile DACLDbits_t DACLDbits __attribute__((address(0x58D)));
+[v _DACLDbits `VS661 ~T0 @X0 0 e@1421 ]
 "994
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 994: extern volatile unsigned char TMR1H __attribute__((address(0x019)));
 [v _TMR1H `Vuc ~T0 @X0 0 e@25 ]
@@ -176,25 +190,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10350
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 10350: extern volatile T4CONbits_t T4CONbits __attribute__((address(0x415)));
 [v _T4CONbits `VS496 ~T0 @X0 0 e@1045 ]
-"13346
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13346: extern volatile unsigned char DAC1REFL __attribute__((address(0x58F)));
-[v _DAC1REFL `Vuc ~T0 @X0 0 e@1423 ]
-"13094
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13094:     struct {
-[s S662 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S662 . DAC1LD DAC2LD . DAC5LD ]
-"13093
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13093: typedef union {
-[u S661 `S662 1 ]
-[n S661 . . ]
-"13101
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 13101: extern volatile DACLDbits_t DACLDbits __attribute__((address(0x58D)));
-[v _DACLDbits `VS661 ~T0 @X0 0 e@1421 ]
 "31 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-[t ~ __interrupt . k ]
-[t T2 __interrupt ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1778.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1893,16 +1891,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x WDTE = OFF ]
 "7
 [p x PLLEN = ON ]
-"30 main.c
-[; ;main.c: 30: static short audio_output;
-[v _audio_output `s ~T0 @X0 1 s ]
-"31
-[; ;main.c: 31: static char ArrayIndex = 0;
-[v _ArrayIndex `uc ~T0 @X0 1 s ]
-[i _ArrayIndex
--> -> 0 `i `uc
-]
-"32
+"32 main.c
 [; ;main.c: 32: static const Node Sine_Sample[]={
 [v _Sine_Sample `CS1731 ~T0 @X0 -> 49 `i s ]
 [i _Sine_Sample
@@ -2105,6 +2094,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
+"60
+[; ;main.c: 60: static short audio_output;
+[v _audio_output `s ~T0 @X0 1 s ]
 "61
 [; ;main.c: 61: static Node* current = (Node*)&Sine_Sample[0];
 [v _current `*S1731 ~T0 @X0 1 s ]
@@ -2158,78 +2150,80 @@ Version 4.0 HI-TECH Software Intermediate Code
 "78
 [; ;main.c: 78:     DAC1CON0 = 160;
 [e = _DAC1CON0 -> -> 160 `i `uc ]
-"79
-[; ;main.c: 79:     DAC1REFH = 1;
-[e = _DAC1REFH -> -> 1 `i `uc ]
-"80
-[; ;main.c: 80:     long unsigned int duration=0;
-[v _duration `ul ~T0 @X0 1 a ]
-[e = _duration -> -> -> 0 `i `l `ul ]
-"82
-[; ;main.c: 82:     ConfigureTimer1();
+"81
+[; ;main.c: 81:     ConfigureTimer1();
 [e ( _ConfigureTimer1 ..  ]
-"83
-[; ;main.c: 83:     ConfigureTimer2();
+"82
+[; ;main.c: 82:     ConfigureTimer2();
 [e ( _ConfigureTimer2 ..  ]
-"84
-[; ;main.c: 84:     ConfigureTimer4();
+"83
+[; ;main.c: 83:     ConfigureTimer4();
 [e ( _ConfigureTimer4 ..  ]
-"90
-[; ;main.c: 90:     { T2PR = 1; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
+"86
+[; ;main.c: 86:     { T2PR = 1; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
 {
 [e = _T2PR -> -> 1 `i `uc ]
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 [e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
 }
-"113
-[; ;main.c: 113:     audio_output=0;
+"159
+[; ;main.c: 159:     audio_output=0;
 [e = _audio_output -> -> 0 `i `s ]
-"114
-[; ;main.c: 114:     volatile char hold=0;
+"160
+[; ;main.c: 160:     volatile char hold=0;
 [v _hold `Vuc ~T0 @X0 1 a ]
 [e = _hold -> -> 0 `i `uc ]
-"115
-[; ;main.c: 115:     volatile char button_counter=0;
+"161
+[; ;main.c: 161:     volatile char button_counter=0;
 [v _button_counter `Vuc ~T0 @X0 1 a ]
 [e = _button_counter -> -> 0 `i `uc ]
-"116
-[; ;main.c: 116:     while(1)
+"162
+[; ;main.c: 162:     while(1)
 [e :U 1737 ]
-"117
-[; ;main.c: 117:     {
+"163
+[; ;main.c: 163:     {
 {
-"118
-[; ;main.c: 118:         { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+"164
+[; ;main.c: 164:         DAC1REFL =0;
+[e = _DAC1REFL -> -> 0 `i `uc ]
+"165
+[; ;main.c: 165:         DAC1REFH = 0;
+[e = _DAC1REFH -> -> 0 `i `uc ]
+"166
+[; ;main.c: 166:         DACLDbits.DAC1LD = 1;
+[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
+"167
+[; ;main.c: 167:         { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
 {
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 [e = _TMR1H -> -> 0 `i `uc ]
 [e = _TMR1L -> -> 0 `i `uc ]
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
 }
-"119
-[; ;main.c: 119:         if(PORTBbits.RB3==1)
+"169
+[; ;main.c: 169:         if(PORTBbits.RB3==1)
 [e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 1739  ]
-"120
-[; ;main.c: 120:         {
+"170
+[; ;main.c: 170:         {
 {
-"122
-[; ;main.c: 122:             PORTBbits.RB0 = 0;
+"172
+[; ;main.c: 172:             PORTBbits.RB0 = 0;
 [e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"123
-[; ;main.c: 123:             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
+"173
+[; ;main.c: 173:             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
 {
 [e = _T4PR -> -> 20 `i `uc ]
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
 [e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
 }
-"124
-[; ;main.c: 124:             { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+"174
+[; ;main.c: 174:             { while(!PIR4bits.TMR4IF){{ if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
 {
 [e $U 1740  ]
 [e :U 1741 ]
 {
 {
-[e $ ! != -> _audio_output `i -> 0 `i 1743  ]
+[e $ ! == -> _audio_output `i -> 1 `i 1743  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
@@ -2237,6 +2231,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e $U 1744  ]
 [e :U 1745 ]
+{
+}
 [e :U 1744 ]
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1745  ]
 [e :U 1746 ]
@@ -2251,24 +2247,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1742 ]
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
 }
-"126
-[; ;main.c: 126:             PORTBbits.RB0 = 1;
+"176
+[; ;main.c: 176:             PORTBbits.RB0 = 1;
 [e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"127
-[; ;main.c: 127:             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
+"177
+[; ;main.c: 177:             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
 {
 [e = _T4PR -> -> 20 `i `uc ]
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
 [e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
 }
-"128
-[; ;main.c: 128:             { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+"178
+[; ;main.c: 178:             { while(!PIR4bits.TMR4IF){{ if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
 {
 [e $U 1747  ]
 [e :U 1748 ]
 {
 {
-[e $ ! != -> _audio_output `i -> 0 `i 1750  ]
+[e $ ! == -> _audio_output `i -> 1 `i 1750  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
@@ -2276,6 +2272,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e $U 1751  ]
 [e :U 1752 ]
+{
+}
 [e :U 1751 ]
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1752  ]
 [e :U 1753 ]
@@ -2290,23 +2288,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1749 ]
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
 }
-"130
-[; ;main.c: 130:             PORTBbits.RB0 = 0;
+"180
+[; ;main.c: 180:             PORTBbits.RB0 = 0;
 [e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"131
-[; ;main.c: 131:             __nop();
+"181
+[; ;main.c: 181:             __nop();
 [e ( ___nop ..  ]
-"132
-[; ;main.c: 132:             while(PORTBbits.RB1 == 0)
+"182
+[; ;main.c: 182:             while(PORTBbits.RB1 == 0)
 [e $U 1754  ]
 [e :U 1755 ]
-"133
-[; ;main.c: 133:             {
+"183
+[; ;main.c: 183:             {
 {
-"134
-[; ;main.c: 134:                 { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+"184
+[; ;main.c: 184:                 { if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };
 {
-[e $ ! != -> _audio_output `i -> 0 `i 1757  ]
+[e $ ! == -> _audio_output `i -> 1 `i 1757  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
@@ -2314,6 +2312,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e $U 1758  ]
 [e :U 1759 ]
+{
+}
 [e :U 1758 ]
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1759  ]
 [e :U 1760 ]
@@ -2322,33 +2322,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1757 ]
 }
-"135
-[; ;main.c: 135:             }
+"185
+[; ;main.c: 185:             }
 }
 [e :U 1754 ]
-"132
-[; ;main.c: 132:             while(PORTBbits.RB1 == 0)
+"182
+[; ;main.c: 182:             while(PORTBbits.RB1 == 0)
 [e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 1755  ]
 [e :U 1756 ]
-"137
-[; ;main.c: 137:             { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+"187
+[; ;main.c: 187:             { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
 {
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 [e = _TMR1H -> -> 0 `i `uc ]
 [e = _TMR1L -> -> 0 `i `uc ]
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
 }
-"138
-[; ;main.c: 138:             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
+"188
+[; ;main.c: 188:             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
 [e $U 1761  ]
 [e :U 1762 ]
-"139
-[; ;main.c: 139:             {
+"189
+[; ;main.c: 189:             {
 {
-"140
-[; ;main.c: 140:                 { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+"190
+[; ;main.c: 190:                 { if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };
 {
-[e $ ! != -> _audio_output `i -> 0 `i 1764  ]
+[e $ ! == -> _audio_output `i -> 1 `i 1764  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
@@ -2356,6 +2356,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e $U 1765  ]
 [e :U 1766 ]
+{
+}
 [e :U 1765 ]
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1766  ]
 [e :U 1767 ]
@@ -2364,74 +2366,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1764 ]
 }
-"141
-[; ;main.c: 141:             }
+"191
+[; ;main.c: 191:             }
 }
 [e :U 1761 ]
-"138
-[; ;main.c: 138:             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
+"188
+[; ;main.c: 188:             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
 [e $ && == -> . . _PIR1bits 0 0 `i -> 0 `i == -> . . _PORTBbits 0 1 `i -> 1 `i 1762  ]
 [e :U 1763 ]
-"143
-[; ;main.c: 143:             duration = TMR1H;
+"193
+[; ;main.c: 193:             long unsigned int duration = TMR1H;
+[v _duration `ul ~T0 @X0 1 a ]
 [e = _duration -> _TMR1H `ul ]
-"144
-[; ;main.c: 144:             duration = (duration<<8)+TMR1L;
+"194
+[; ;main.c: 194:             duration = (duration<<8)+TMR1L;
 [e = _duration + << _duration -> 8 `i -> _TMR1L `ul ]
-"147
-[; ;main.c: 147:             long unsigned int timer2p=(duration << 4)+(duration<<2);
-[v _timer2p `ul ~T0 @X0 1 a ]
-[e = _timer2p + << _duration -> 4 `i << _duration -> 2 `i ]
-"148
-[; ;main.c: 148:             timer2p = timer2p>>10;
-[e = _timer2p >> _timer2p -> 10 `i ]
-"149
-[; ;main.c: 149:             if(timer2p<80)
-[e $ ! < _timer2p -> -> -> 80 `i `l `ul 1768  ]
-"150
-[; ;main.c: 150:             {
+"197
+[; ;main.c: 197:             long unsigned int timer2pr=(duration << 4)+(duration<<2);
+[v _timer2pr `ul ~T0 @X0 1 a ]
+[e = _timer2pr + << _duration -> 4 `i << _duration -> 2 `i ]
+"198
+[; ;main.c: 198:             timer2pr = timer2pr>>10;
+[e = _timer2pr >> _timer2pr -> 10 `i ]
+"199
+[; ;main.c: 199:             if(timer2pr<120)
+[e $ ! < _timer2pr -> -> -> 120 `i `l `ul 1768  ]
+"200
+[; ;main.c: 200:             {
 {
-"151
-[; ;main.c: 151:                 { T2PR = (char)timer2p; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
+"201
+[; ;main.c: 201:                 { T2PR = (char)timer2pr; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
 {
-[e = _T2PR -> -> _timer2p `uc `uc ]
+[e = _T2PR -> -> _timer2pr `uc `uc ]
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 [e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
 }
-"152
-[; ;main.c: 152:                 audio_output=1;
+"202
+[; ;main.c: 202:                 audio_output=1;
 [e = _audio_output -> -> 1 `i `s ]
-"153
-[; ;main.c: 153:             }
+"203
+[; ;main.c: 203:             }
 }
 [e $U 1769  ]
-"154
-[; ;main.c: 154:             else
+"204
+[; ;main.c: 204:             else
 [e :U 1768 ]
-"155
-[; ;main.c: 155:             {
+"205
+[; ;main.c: 205:             {
 {
-"156
-[; ;main.c: 156:                 PIR1bits.TMR2IF=1;
+"206
+[; ;main.c: 206:                 PIR1bits.TMR2IF=1;
 [e = . . _PIR1bits 0 1 -> -> 1 `i `uc ]
-"157
-[; ;main.c: 157:                 audio_output=0;
+"207
+[; ;main.c: 207:                 audio_output=0;
 [e = _audio_output -> -> 0 `i `s ]
-"158
-[; ;main.c: 158:             }
+"208
+[; ;main.c: 208:             }
 }
 [e :U 1769 ]
-"160
-[; ;main.c: 160:             while(PIR1bits.TMR1IF==0)
+"210
+[; ;main.c: 210:             while(PIR1bits.TMR1IF==0)
 [e $U 1770  ]
 [e :U 1771 ]
-"161
-[; ;main.c: 161:             {
+"211
+[; ;main.c: 211:             {
 {
-"162
-[; ;main.c: 162:                 { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+"212
+[; ;main.c: 212:                 { if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };
 {
-[e $ ! != -> _audio_output `i -> 0 `i 1773  ]
+[e $ ! == -> _audio_output `i -> 1 `i 1773  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
@@ -2439,6 +2442,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e $U 1774  ]
 [e :U 1775 ]
+{
+}
 [e :U 1774 ]
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1775  ]
 [e :U 1776 ]
@@ -2447,51 +2452,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1773 ]
 }
-"163
-[; ;main.c: 163:             }
+"213
+[; ;main.c: 213:             }
 }
 [e :U 1770 ]
-"160
-[; ;main.c: 160:             while(PIR1bits.TMR1IF==0)
+"210
+[; ;main.c: 210:             while(PIR1bits.TMR1IF==0)
 [e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1771  ]
 [e :U 1772 ]
-"165
-[; ;main.c: 165:         }
+"215
+[; ;main.c: 215:         }
 }
 [e $U 1777  ]
-"166
-[; ;main.c: 166:         else
+"216
+[; ;main.c: 216:         else
 [e :U 1739 ]
-"167
-[; ;main.c: 167:         {
+"217
+[; ;main.c: 217:         {
 {
-"170
-[; ;main.c: 170:             if(button_counter)
+"220
+[; ;main.c: 220:             if(button_counter)
 [e $ ! != -> _button_counter `i -> 0 `i 1778  ]
-"171
-[; ;main.c: 171:             {
+"221
+[; ;main.c: 221:             {
 {
-"172
-[; ;main.c: 172:                 button_counter=0;
+"222
+[; ;main.c: 222:                 button_counter=0;
 [e = _button_counter -> -> 0 `i `uc ]
-"174
-[; ;main.c: 174:                 PORTBbits.RB0 = 0;
+"224
+[; ;main.c: 224:                 PORTBbits.RB0 = 0;
 [e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"175
-[; ;main.c: 175:                 { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
+"225
+[; ;main.c: 225:                 { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
 {
 [e = _T4PR -> -> 20 `i `uc ]
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
 [e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
 }
-"176
-[; ;main.c: 176:                 { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+"226
+[; ;main.c: 226:                 { while(!PIR4bits.TMR4IF){{ if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
 {
 [e $U 1779  ]
 [e :U 1780 ]
 {
 {
-[e $ ! != -> _audio_output `i -> 0 `i 1782  ]
+[e $ ! == -> _audio_output `i -> 1 `i 1782  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
@@ -2499,6 +2504,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e $U 1783  ]
 [e :U 1784 ]
+{
+}
 [e :U 1783 ]
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1784  ]
 [e :U 1785 ]
@@ -2513,24 +2520,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1781 ]
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
 }
-"178
-[; ;main.c: 178:                 PORTBbits.RB0 = 1;
+"228
+[; ;main.c: 228:                 PORTBbits.RB0 = 1;
 [e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"179
-[; ;main.c: 179:                 { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
+"229
+[; ;main.c: 229:                 { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
 {
 [e = _T4PR -> -> 20 `i `uc ]
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
 [e = . . _T4CONbits 0 2 -> -> 1 `i `uc ]
 }
-"180
-[; ;main.c: 180:                 { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+"230
+[; ;main.c: 230:                 { while(!PIR4bits.TMR4IF){{ if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
 {
 [e $U 1786  ]
 [e :U 1787 ]
 {
 {
-[e $ ! != -> _audio_output `i -> 0 `i 1789  ]
+[e $ ! == -> _audio_output `i -> 1 `i 1789  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
@@ -2538,6 +2545,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e $U 1790  ]
 [e :U 1791 ]
+{
+}
 [e :U 1790 ]
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1791  ]
 [e :U 1792 ]
@@ -2552,14 +2561,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1788 ]
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
 }
-"182
-[; ;main.c: 182:                 PORTBbits.RB0 = 0;
+"232
+[; ;main.c: 232:                 PORTBbits.RB0 = 0;
 [e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"183
-[; ;main.c: 183:                 __nop();
+"233
+[; ;main.c: 233:                 __nop();
 [e ( ___nop ..  ]
-"184
-[; ;main.c: 184:                 while(PORTBbits.RB1 == 0){};
+"234
+[; ;main.c: 234:                 while(PORTBbits.RB1 == 0){};
 [e $U 1793  ]
 [e :U 1794 ]
 {
@@ -2567,16 +2576,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1793 ]
 [e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 1794  ]
 [e :U 1795 ]
-"185
-[; ;main.c: 185:                 { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+"235
+[; ;main.c: 235:                 { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
 {
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 [e = _TMR1H -> -> 0 `i `uc ]
 [e = _TMR1L -> -> 0 `i `uc ]
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
 }
-"187
-[; ;main.c: 187:                 while(PORTBbits.RB1 == 1&&PIR1bits.TMR1IF==0){};
+"237
+[; ;main.c: 237:                 while(PORTBbits.RB1 == 1&&PIR1bits.TMR1IF==0){};
 [e $U 1796  ]
 [e :U 1797 ]
 {
@@ -2584,92 +2593,93 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1796 ]
 [e $ && == -> . . _PORTBbits 0 1 `i -> 1 `i == -> . . _PIR1bits 0 0 `i -> 0 `i 1797  ]
 [e :U 1798 ]
-"189
-[; ;main.c: 189:                 if(PIR1bits.TMR1IF==1)
+"239
+[; ;main.c: 239:                 if(PIR1bits.TMR1IF==1)
 [e $ ! == -> . . _PIR1bits 0 0 `i -> 1 `i 1799  ]
-"190
-[; ;main.c: 190:                     continue;
+"240
+[; ;main.c: 240:                     continue;
 [e $U 1736  ]
 [e :U 1799 ]
-"191
-[; ;main.c: 191:                 duration = TMR1H;
+"241
+[; ;main.c: 241:                 long unsigned int duration = TMR1H;
+[v _duration `ul ~T0 @X0 1 a ]
 [e = _duration -> _TMR1H `ul ]
-"192
-[; ;main.c: 192:                 duration = (duration<<8)+TMR1L;
+"242
+[; ;main.c: 242:                 duration = (duration<<8)+TMR1L;
 [e = _duration + << _duration -> 8 `i -> _TMR1L `ul ]
-"195
-[; ;main.c: 195:                 long unsigned int timer2p=(duration << 4)+(duration<<2);
-[v _timer2p `ul ~T0 @X0 1 a ]
-[e = _timer2p + << _duration -> 4 `i << _duration -> 2 `i ]
-"196
-[; ;main.c: 196:                 timer2p = timer2p>>10;
-[e = _timer2p >> _timer2p -> 10 `i ]
-"197
-[; ;main.c: 197:                 if(timer2p<80)
-[e $ ! < _timer2p -> -> -> 80 `i `l `ul 1800  ]
-"198
-[; ;main.c: 198:                 {
+"245
+[; ;main.c: 245:                 long unsigned int timer2pr=(duration << 4)+(duration<<2);
+[v _timer2pr `ul ~T0 @X0 1 a ]
+[e = _timer2pr + << _duration -> 4 `i << _duration -> 2 `i ]
+"246
+[; ;main.c: 246:                 timer2pr = timer2pr>>10;
+[e = _timer2pr >> _timer2pr -> 10 `i ]
+"247
+[; ;main.c: 247:                 if(timer2pr<120)
+[e $ ! < _timer2pr -> -> -> 120 `i `l `ul 1800  ]
+"248
+[; ;main.c: 248:                 {
 {
-"199
-[; ;main.c: 199:                     { T2PR = (char)timer2p; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
+"249
+[; ;main.c: 249:                     { T2PR = (char)timer2pr; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
 {
-[e = _T2PR -> -> _timer2p `uc `uc ]
+[e = _T2PR -> -> _timer2pr `uc `uc ]
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 [e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
 }
-"200
-[; ;main.c: 200:                     audio_output=1;
+"250
+[; ;main.c: 250:                     audio_output=1;
 [e = _audio_output -> -> 1 `i `s ]
-"201
-[; ;main.c: 201:                 }
+"251
+[; ;main.c: 251:                 }
 }
 [e $U 1801  ]
-"202
-[; ;main.c: 202:                 else
+"252
+[; ;main.c: 252:                 else
 [e :U 1800 ]
-"203
-[; ;main.c: 203:                 {
+"253
+[; ;main.c: 253:                 {
 {
-"204
-[; ;main.c: 204:                     PIR1bits.TMR2IF=1;
+"254
+[; ;main.c: 254:                     PIR1bits.TMR2IF=1;
 [e = . . _PIR1bits 0 1 -> -> 1 `i `uc ]
-"205
-[; ;main.c: 205:                     audio_output=0;
+"255
+[; ;main.c: 255:                     audio_output=0;
 [e = _audio_output -> -> 0 `i `s ]
-"206
-[; ;main.c: 206:                 }
+"256
+[; ;main.c: 256:                 }
 }
 [e :U 1801 ]
-"209
-[; ;main.c: 209:                 int play_count=10;
+"259
+[; ;main.c: 259:                 int play_count=10;
 [v _play_count `i ~T0 @X0 1 a ]
 [e = _play_count -> 10 `i ]
-"210
-[; ;main.c: 210:                 while(play_count>0)
+"260
+[; ;main.c: 260:                 while(play_count>0)
 [e $U 1802  ]
 [e :U 1803 ]
-"211
-[; ;main.c: 211:                 {
+"261
+[; ;main.c: 261:                 {
 {
-"212
-[; ;main.c: 212:                     { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+"262
+[; ;main.c: 262:                     { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
 {
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 [e = _TMR1H -> -> 0 `i `uc ]
 [e = _TMR1L -> -> 0 `i `uc ]
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
 }
-"213
-[; ;main.c: 213:                     while(PIR1bits.TMR1IF==0)
+"263
+[; ;main.c: 263:                     while(PIR1bits.TMR1IF==0)
 [e $U 1805  ]
 [e :U 1806 ]
-"214
-[; ;main.c: 214:                     {
+"264
+[; ;main.c: 264:                     {
 {
-"215
-[; ;main.c: 215:                         { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+"265
+[; ;main.c: 265:                         { if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };
 {
-[e $ ! != -> _audio_output `i -> 0 `i 1808  ]
+[e $ ! == -> _audio_output `i -> 1 `i 1808  ]
 {
 [e = _DAC1REFL -> . *U _current 0 `uc ]
 [e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
@@ -2677,6 +2687,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e $U 1809  ]
 [e :U 1810 ]
+{
+}
 [e :U 1809 ]
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1810  ]
 [e :U 1811 ]
@@ -2685,88 +2697,88 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1808 ]
 }
-"216
-[; ;main.c: 216:                     }
+"266
+[; ;main.c: 266:                     }
 }
 [e :U 1805 ]
-"213
-[; ;main.c: 213:                     while(PIR1bits.TMR1IF==0)
+"263
+[; ;main.c: 263:                     while(PIR1bits.TMR1IF==0)
 [e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1806  ]
 [e :U 1807 ]
-"217
-[; ;main.c: 217:                     play_count--;
+"267
+[; ;main.c: 267:                     play_count--;
 [e -- _play_count -> 1 `i ]
-"218
-[; ;main.c: 218:                 }
+"268
+[; ;main.c: 268:                 }
 }
 [e :U 1802 ]
-"210
-[; ;main.c: 210:                 while(play_count>0)
+"260
+[; ;main.c: 260:                 while(play_count>0)
 [e $ > _play_count -> 0 `i 1803  ]
 [e :U 1804 ]
-"219
-[; ;main.c: 219:             }
+"269
+[; ;main.c: 269:             }
 }
 [e $U 1812  ]
-"220
-[; ;main.c: 220:             else
+"270
+[; ;main.c: 270:             else
 [e :U 1778 ]
-"221
-[; ;main.c: 221:             {
+"271
+[; ;main.c: 271:             {
 {
-"222
-[; ;main.c: 222:                 if(PORTBbits.RB2==1 && hold==0)
+"272
+[; ;main.c: 272:                 if(PORTBbits.RB2==1 && hold==0)
 [e $ ! && == -> . . _PORTBbits 0 2 `i -> 1 `i == -> _hold `i -> 0 `i 1813  ]
-"223
-[; ;main.c: 223:                 {
+"273
+[; ;main.c: 273:                 {
 {
-"224
-[; ;main.c: 224:                     hold=1;
+"274
+[; ;main.c: 274:                     hold=1;
 [e = _hold -> -> 1 `i `uc ]
-"225
-[; ;main.c: 225:                     button_counter=1;
+"275
+[; ;main.c: 275:                     button_counter=1;
 [e = _button_counter -> -> 1 `i `uc ]
-"226
-[; ;main.c: 226:                 }
+"276
+[; ;main.c: 276:                 }
 }
 [e $U 1814  ]
-"227
-[; ;main.c: 227:                 else if(PORTBbits.RB2==1 && hold==1)
+"277
+[; ;main.c: 277:                 else if(PORTBbits.RB2==1 && hold==1)
 [e :U 1813 ]
 [e $ ! && == -> . . _PORTBbits 0 2 `i -> 1 `i == -> _hold `i -> 1 `i 1815  ]
-"228
-[; ;main.c: 228:                 {
+"278
+[; ;main.c: 278:                 {
 {
-"229
-[; ;main.c: 229:                     continue;
+"279
+[; ;main.c: 279:                     continue;
 [e $U 1736  ]
-"230
-[; ;main.c: 230:                 }
+"280
+[; ;main.c: 280:                 }
 }
 [e $U 1816  ]
-"231
-[; ;main.c: 231:                 else
+"281
+[; ;main.c: 281:                 else
 [e :U 1815 ]
-"232
-[; ;main.c: 232:                 {
+"282
+[; ;main.c: 282:                 {
 {
-"233
-[; ;main.c: 233:                     hold=0;
+"283
+[; ;main.c: 283:                     hold=0;
 [e = _hold -> -> 0 `i `uc ]
-"234
-[; ;main.c: 234:                     button_counter=0;
+"284
+[; ;main.c: 284:                     button_counter=0;
 [e = _button_counter -> -> 0 `i `uc ]
-"235
-[; ;main.c: 235:                 }
+"285
+[; ;main.c: 285:                 }
 }
 [e :U 1816 ]
 [e :U 1814 ]
-"236
-[; ;main.c: 236:             }
+"286
+[; ;main.c: 286:             }
 }
 [e :U 1812 ]
-"237
-[; ;main.c: 237:         { while(PIR1bits.TMR1IF==0); };
+"287
+[; ;main.c: 287:         { while(PIR1bits.TMR1IF==0); };
 {
 [e $U 1817  ]
 [e :U 1818 ]
@@ -2774,57 +2786,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ == -> . . _PIR1bits 0 0 `i -> 0 `i 1818  ]
 [e :U 1819 ]
 }
-"238
-[; ;main.c: 238:         }
+"288
+[; ;main.c: 288:         }
 }
 [e :U 1777 ]
-"240
-[; ;main.c: 240:     }
+"290
+[; ;main.c: 290:     }
 }
 [e :U 1736 ]
 [e $U 1737  ]
 [e :U 1738 ]
-"242
-[; ;main.c: 242: }
+"292
+[; ;main.c: 292: }
 [e :UE 1732 ]
-}
-[v $root$_playSineWave `(v ~T0 @X0 0 e ]
-"244
-[; ;main.c: 244: void __attribute__((picinterrupt(("")))) playSineWave(void)
-[v _playSineWave `(v ~T2 @X0 1 ef ]
-"245
-[; ;main.c: 245: {
-{
-[e :U _playSineWave ]
-[f ]
-"246
-[; ;main.c: 246:     if(audio_output){
-[e $ ! != -> _audio_output `i -> 0 `i 1821  ]
-{
-"247
-[; ;main.c: 247:         DAC1REFL = current->item;
-[e = _DAC1REFL -> . *U _current 0 `uc ]
-"248
-[; ;main.c: 248:         DACLDbits.DAC1LD = 1;
-[e = . . _DACLDbits 0 0 -> -> 1 `i `uc ]
-"249
-[; ;main.c: 249:         current = current->next;
-[e = _current . *U _current 1 ]
-"250
-[; ;main.c: 250:         { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; };
-{
-[e $U 1822  ]
-[e :U 1823 ]
-[e :U 1822 ]
-[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 1823  ]
-[e :U 1824 ]
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-}
-"251
-[; ;main.c: 251:     }
-}
-[e :U 1821 ]
-"252
-[; ;main.c: 252: }
-[e :UE 1820 ]
 }

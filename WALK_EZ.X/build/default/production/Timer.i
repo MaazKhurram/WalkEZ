@@ -19437,9 +19437,6 @@ void ConfigureTimer1()
 
     T1GCON =0x50;
 
-
-
-
 }
 
 void ConfigureTimer2()

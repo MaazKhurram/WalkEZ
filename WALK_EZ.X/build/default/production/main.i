@@ -19436,16 +19436,16 @@ void ConfigureTimer4();
 
 
 
+
 typedef struct sine_node{
     short item;
     struct sine_node* next;
 } Node;
-# 27 "main.c"
+# 28 "main.c"
 void __attribute__((picinterrupt(("")))) playSineWave(void);
 
 
-static short audio_output;
-static char ArrayIndex = 0;
+
 static const Node Sine_Sample[]={
     {(short)128,(Node*)&Sine_Sample[1]},{(short)144,(Node*)&Sine_Sample[2]},
     {(short)160,(Node*)&Sine_Sample[3]},{(short)176,(Node*)&Sine_Sample[4]},
@@ -19474,7 +19474,7 @@ static const Node Sine_Sample[]={
     {(short)128,(Node*)&Sine_Sample[0]}
 };
 
-
+static short audio_output;
 static Node* current = (Node*)&Sine_Sample[0];
 void main(void) {
 
@@ -19493,58 +19493,58 @@ void main(void) {
 
     TRISA = 251;
     DAC1CON0 = 160;
-    DAC1REFH = 1;
-    long unsigned int duration=0;
+
 
     ConfigureTimer1();
     ConfigureTimer2();
     ConfigureTimer4();
 
 
-
-
-
     { T2PR = 1; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
-# 113 "main.c"
+# 159 "main.c"
     audio_output=0;
     volatile char hold=0;
     volatile char button_counter=0;
     while(1)
     {
+        DAC1REFL =0;
+        DAC1REFH = 0;
+        DACLDbits.DAC1LD = 1;
         { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
+
         if(PORTBbits.RB3==1)
         {
 
             PORTBbits.RB0 = 0;
             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
-            { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+            { while(!PIR4bits.TMR4IF){{ if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
 
             PORTBbits.RB0 = 1;
             { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
-            { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+            { while(!PIR4bits.TMR4IF){{ if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
 
             PORTBbits.RB0 = 0;
             __nop();
             while(PORTBbits.RB1 == 0)
             {
-                { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+                { if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };
             }
 
             { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
             while((PIR1bits.TMR1IF==0) && (PORTBbits.RB1 == 1) )
             {
-                { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+                { if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };
             }
 
-            duration = TMR1H;
+            long unsigned int duration = TMR1H;
             duration = (duration<<8)+TMR1L;
 
 
-            long unsigned int timer2p=(duration << 4)+(duration<<2);
-            timer2p = timer2p>>10;
-            if(timer2p<80)
+            long unsigned int timer2pr=(duration << 4)+(duration<<2);
+            timer2pr = timer2pr>>10;
+            if(timer2pr<120)
             {
-                { T2PR = (char)timer2p; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
+                { T2PR = (char)timer2pr; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
                 audio_output=1;
             }
             else
@@ -19555,7 +19555,7 @@ void main(void) {
 
             while(PIR1bits.TMR1IF==0)
             {
-                { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+                { if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };
             }
 
         }
@@ -19569,11 +19569,11 @@ void main(void) {
 
                 PORTBbits.RB0 = 0;
                 { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
-                { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+                { while(!PIR4bits.TMR4IF){{ if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
 
                 PORTBbits.RB0 = 1;
                 { T4PR = 20; PIR4bits.TMR4IF = 0; T4CONbits.ON = 1; };
-                { while(!PIR4bits.TMR4IF){{ if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
+                { while(!PIR4bits.TMR4IF){{ if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };} PIR4bits.TMR4IF = 0; };
 
                 PORTBbits.RB0 = 0;
                 __nop();
@@ -19584,15 +19584,15 @@ void main(void) {
 
                 if(PIR1bits.TMR1IF==1)
                     continue;
-                duration = TMR1H;
+                long unsigned int duration = TMR1H;
                 duration = (duration<<8)+TMR1L;
 
 
-                long unsigned int timer2p=(duration << 4)+(duration<<2);
-                timer2p = timer2p>>10;
-                if(timer2p<80)
+                long unsigned int timer2pr=(duration << 4)+(duration<<2);
+                timer2pr = timer2pr>>10;
+                if(timer2pr<120)
                 {
-                    { T2PR = (char)timer2p; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
+                    { T2PR = (char)timer2pr; PIR1bits.TMR2IF = 0; T2CONbits.ON = 1; };
                     audio_output=1;
                 }
                 else
@@ -19608,7 +19608,7 @@ void main(void) {
                     { PIR1bits.TMR1IF=0; TMR1H = 0; TMR1L = 0; T1CONbits.ON = 1; };
                     while(PIR1bits.TMR1IF==0)
                     {
-                        { if(audio_output){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; }; } };
+                        { if(audio_output==1){ DAC1REFL = current->item; DACLDbits.DAC1LD = 1; current = current->next; { while(!PIR1bits.TMR2IF){}; PIR1bits.TMR2IF = 0; }; } };
                     }
                     play_count--;
                 }
@@ -19635,14 +19635,4 @@ void main(void) {
 
     }
 
-}
-
-void __attribute__((picinterrupt(("")))) playSineWave(void)
-{
-    if(audio_output){
-        DAC1REFL = current->item;
-        DACLDbits.DAC1LD = 1;
-        current = current->next;
-        { while(!PIR1bits.TMR2IF); PIR1bits.TMR2IF = 0; };
-    }
 }

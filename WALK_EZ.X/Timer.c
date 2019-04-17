@@ -10,9 +10,6 @@ void ConfigureTimer1()
     //
     T1GCON =0x50; //0101_000
     
-    //PIE1bits.TMR1IE=1;
-    //INTCONbits.PEIE = 1;
-    //INTCONbits.GIE = 1;
 }
 
 void ConfigureTimer2()

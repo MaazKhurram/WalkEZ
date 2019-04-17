@@ -1744,58 +1744,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11
 [; ;Timer.c: 11:     T1GCON =0x50;
 [e = _T1GCON -> -> 80 `i `uc ]
-"16
-[; ;Timer.c: 16: }
+"13
+[; ;Timer.c: 13: }
 [e :UE 1731 ]
 }
-"18
-[; ;Timer.c: 18: void ConfigureTimer2()
+"15
+[; ;Timer.c: 15: void ConfigureTimer2()
 [v _ConfigureTimer2 `(v ~T0 @X0 1 ef ]
-"19
-[; ;Timer.c: 19: {
+"16
+[; ;Timer.c: 16: {
 {
 [e :U _ConfigureTimer2 ]
 [f ]
-"20
-[; ;Timer.c: 20:     T2PR = 0;
+"17
+[; ;Timer.c: 17:     T2PR = 0;
 [e = _T2PR -> -> 0 `i `uc ]
-"24
-[; ;Timer.c: 24:     T2CLKCON = 0x03;
+"21
+[; ;Timer.c: 21:     T2CLKCON = 0x03;
 [e = _T2CLKCON -> -> 3 `i `uc ]
-"30
-[; ;Timer.c: 30:     T2CON = 0xB0;
+"27
+[; ;Timer.c: 27:     T2CON = 0xB0;
 [e = _T2CON -> -> 176 `i `uc ]
-"31
-[; ;Timer.c: 31:     PIR1bits.TMR2IF = 0;
+"28
+[; ;Timer.c: 28:     PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"32
-[; ;Timer.c: 32:     return;
+"29
+[; ;Timer.c: 29:     return;
 [e $UE 1732  ]
-"33
-[; ;Timer.c: 33: }
+"30
+[; ;Timer.c: 30: }
 [e :UE 1732 ]
 }
-"35
-[; ;Timer.c: 35: void ConfigureTimer4()
+"32
+[; ;Timer.c: 32: void ConfigureTimer4()
 [v _ConfigureTimer4 `(v ~T0 @X0 1 ef ]
-"36
-[; ;Timer.c: 36: {
+"33
+[; ;Timer.c: 33: {
 {
 [e :U _ConfigureTimer4 ]
 [f ]
-"38
-[; ;Timer.c: 38:     T4CLKCON = 0x02;
+"35
+[; ;Timer.c: 35:     T4CLKCON = 0x02;
 [e = _T4CLKCON -> -> 2 `i `uc ]
-"42
-[; ;Timer.c: 42:     T4CON = 0x30;
+"39
+[; ;Timer.c: 39:     T4CON = 0x30;
 [e = _T4CON -> -> 48 `i `uc ]
-"46
-[; ;Timer.c: 46:     T4HLT = 0x08;
+"43
+[; ;Timer.c: 43:     T4HLT = 0x08;
 [e = _T4HLT -> -> 8 `i `uc ]
-"49
-[; ;Timer.c: 49:     return;
+"46
+[; ;Timer.c: 46:     return;
 [e $UE 1733  ]
-"50
-[; ;Timer.c: 50: }
+"47
+[; ;Timer.c: 47: }
 [e :UE 1733 ]
 }

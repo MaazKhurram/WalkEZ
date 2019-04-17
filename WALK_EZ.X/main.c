@@ -7,6 +7,7 @@
 #define InputPin PORTBbits.RB1  //echo
 #define Button PORTBbits.RB2    //pulse button  
 #define Search PORTBbits.RB3    //search mode button
+#define MAX_DISTANCE 120        //8-bit max distance 0-255, depends on timer1.
 
 typedef struct sine_node{
     short item;
@@ -15,7 +16,7 @@ typedef struct sine_node{
 
 #define PLAY_AUDIO()                        \
 {                                           \
-    if(audio_output){                       \
+    if(audio_output==1){                    \
         DAC1REFL = current->item;           \
         DACLDbits.DAC1LD = 1;               \
         current = current->next;            \
@@ -27,8 +28,7 @@ typedef struct sine_node{
 void __interrupt () playSineWave(void);
 
 
-static short audio_output; 
-static char ArrayIndex = 0;
+
 static const Node Sine_Sample[]={
     {(short)128,(Node*)&Sine_Sample[1]},{(short)144,(Node*)&Sine_Sample[2]},
     {(short)160,(Node*)&Sine_Sample[3]},{(short)176,(Node*)&Sine_Sample[4]},
@@ -57,7 +57,7 @@ static const Node Sine_Sample[]={
     {(short)128,(Node*)&Sine_Sample[0]}
 };
 
-
+static short audio_output; 
 static Node* current = (Node*)&Sine_Sample[0];
 void main(void) {
    
@@ -76,49 +76,18 @@ void main(void) {
     
     TRISA = 251;
     DAC1CON0 = 160;
-    DAC1REFH = 1;
-    long unsigned int duration=0;
+    
     
     ConfigureTimer1();
     ConfigureTimer2();
     ConfigureTimer4();
     
     
-    //INTCONbits.GIE=1;
-    //INTCONbits.PEIE=1;
-    //PIE1bits.TMR2IE=1;
     TIMER2_START(1);
     /*
     while(1)
     {
-        OutputPin = 0;
-        while(PIR1bits.TMR2IF==0);
-        PIR1bits.TMR2IF=0;
-        OutputPin = 1;
-        while(PIR1bits.TMR2IF==0);
-        PIR1bits.TMR2IF=0;
-        OutputPin=0;
-        __nop();
-    }
-    
-    while(1){
-        //PLAY_AUDIO();
-        while(PIR1bits.TMR2IF==0);
-        DAC1REFL = current->item;               
-        DACLDbits.DAC1LD = 1;                   
-        current = current->next;
-        PIR1bits.TMR2IF=0;
-    }
-    */
-    audio_output=0;
-    volatile char hold=0;
-    volatile char button_counter=0;
-    while(1)
-    {
-        TIMER1_START();
-        if(Search==1)
-        {
-            //enter search mode
+        //enter search mode
             OutputPin = 0;
             TIMER4_START(20);
             TIMER4_WAIT();
@@ -144,11 +113,92 @@ void main(void) {
             duration = (duration<<8)+TMR1L;
             
             
-            long unsigned int timer2p=(duration << 4)+(duration<<2);
-            timer2p = timer2p>>10;
-            if(timer2p<80)
+            long unsigned int timer2pr=(duration << 4)+(duration<<2);
+            timer2pr = timer2pr>>10;
+            if(timer2pr<80)
             {
-                TIMER2_START((char)timer2p);
+                TIMER2_START((char)timer2pr);
+                audio_output=1;
+            }
+            else
+            {
+                PIR1bits.TMR2IF=1;
+                audio_output=0;
+            }
+
+            while(PIR1bits.TMR1IF==0)
+            {
+                PLAY_AUDIO();
+            }
+    }
+    
+    while(1)
+    {
+        TIMER2_START(20);
+        
+        OutputPin = 0;
+        while(PIR1bits.TMR2IF==0);
+        PIR1bits.TMR2IF=0;
+        OutputPin = 1;
+        while(PIR1bits.TMR2IF==0);
+        PIR1bits.TMR2IF=0;
+        OutputPin=0;
+        TIMER2_WAIT();
+        __nop();
+    }
+    
+    while(1){
+        //PLAY_AUDIO();
+        while(PIR1bits.TMR2IF==0);
+        DAC1REFL = current->item;               
+        DACLDbits.DAC1LD = 1;                   
+        current = current->next;
+        PIR1bits.TMR2IF=0;
+    }
+    */
+    audio_output=0;
+    volatile char hold=0;
+    volatile char button_counter=0;
+    while(1)
+    {
+        DAC1REFL =0;
+        DAC1REFH = 0;
+        DACLDbits.DAC1LD = 1;
+        TIMER1_START();
+        
+        if(Search==1)
+        {
+            //enter search mode
+            OutputPin = 0;
+            TIMER4_START(20);
+            TIMER4_WAIT();
+
+            OutputPin = 1;
+            TIMER4_START(20);
+            TIMER4_WAIT();
+
+            OutputPin = 0;
+            __nop();
+            while(InputPin == 0)
+            {
+                PLAY_AUDIO();
+            }
+
+            TIMER1_START();
+            while((PIR1bits.TMR1IF==0) && (InputPin == 1) )
+            {
+                PLAY_AUDIO();
+            }
+
+            long unsigned int duration = TMR1H;
+            duration = (duration<<8)+TMR1L;
+            
+            
+            long unsigned int timer2pr=(duration << 4)+(duration<<2);
+            timer2pr = timer2pr>>10;
+            if(timer2pr<MAX_DISTANCE)
+            {
+                TIMER2_START((char)timer2pr);
                 audio_output=1;
             }
             else
@@ -188,15 +238,15 @@ void main(void) {
 
                 if(PIR1bits.TMR1IF==1)
                     continue;
-                duration = TMR1H;
+                long unsigned int duration = TMR1H;
                 duration = (duration<<8)+TMR1L;
 
 
-                long unsigned int timer2p=(duration << 4)+(duration<<2);
-                timer2p = timer2p>>10;
-                if(timer2p<80)
+                long unsigned int timer2pr=(duration << 4)+(duration<<2);
+                timer2pr = timer2pr>>10;
+                if(timer2pr<MAX_DISTANCE)
                 {
-                    TIMER2_START((char)timer2p);
+                    TIMER2_START((char)timer2pr);
                     audio_output=1;
                 }
                 else
@@ -241,12 +291,3 @@ void main(void) {
       
 }
  
-void __interrupt () playSineWave(void)
-{
-    if(audio_output){
-        DAC1REFL = current->item;
-        DACLDbits.DAC1LD = 1;
-        current = current->next;
-        TIMER2_WAIT();
-    }
-}

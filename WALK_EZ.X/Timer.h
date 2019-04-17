@@ -53,7 +53,7 @@ void ConfigureTimer4();
 
 #define TIMER2_WAIT()           \
 {                               \
-    while(!PIR1bits.TMR2IF);    \
+    while(!PIR1bits.TMR2IF){};    \
     PIR1bits.TMR2IF = 0;        \
 }
 
